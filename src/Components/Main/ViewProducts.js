@@ -48,11 +48,12 @@ export const ViewProducts = () => {
     });
   };
 
-  const ViewDetail = (img) => {
+  const ViewDetail = (img, price) => {
     navigate({
       pathname: "/viewdetail",
       search: createSearchParams({
         img,
+        price,
       }).toString(),
     });
   };
@@ -112,7 +113,7 @@ export const ViewProducts = () => {
                           <h3 className="text-center"></h3>
                           <button
                             className="cart-button mt-2   gradient"
-                            onClick={() => ViewDetail(x.Image)}
+                            onClick={() => ViewDetail(x.Image, x.Price)}
                           >
                             View Details
                           </button>

@@ -10,6 +10,8 @@ const ViewDetail = () => {
   const [searchparams] = useSearchParams();
 
   let img = searchparams.get("img");
+  let price = searchparams.get("price");
+
   // }
   return (
     <>
@@ -46,7 +48,7 @@ const ViewDetail = () => {
               Lorem Ipsum.
             </p>
 
-            <p style={{ fontSize: "25px" }}>Rs. 300</p>
+            <p style={{ fontSize: "25px" }}>Rs. {price}</p>
 
             {/* <div className="buttons d-flex align-items-center justify-content-start pt-3">
                             <button className='Buy-Button bg-gradient'>BUY NOW</button>
