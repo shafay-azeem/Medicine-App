@@ -29,17 +29,24 @@ const ViewDetail = () => {
 
           {/* Col of 6  */}
           <div className="col-md-6">
-            <h1>Some heading goes here</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-              maxime sequi ad ex excepturi dolore blanditiis iste, expedita
-              obcaecati voluptate ratione. Rem molestiae quasi reprehenderit,
-              eius quis illum maiores minus quibusdam iusto ullam ratione vero
-              officiis modi quam nemo eligendi ut. Vel eligendi nemo assumenda,
-              reiciendis accusamus quasi itaque corrupti!
+            <h1 style={{ textTransform: "capitalize" }}>
+              Some heading goes here
+            </h1>
+
+            <p style={{ textAlign: "justify" }}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
             </p>
+
+            <p style={{ fontSize: "25px" }}>Rs. 300</p>
 
             {/* <div className="buttons d-flex align-items-center justify-content-start pt-3">
                             <button className='Buy-Button bg-gradient'>BUY NOW</button>

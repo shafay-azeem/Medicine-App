@@ -1,5 +1,5 @@
 .navbar-nav .nav-link {
-  font-size: 15px;
+  font-size: 16.5px;
   font-weight: normal;
   font-family: sans-serif;
   margin-right: 20px;
@@ -11,4 +11,13 @@
 .anchor {
   color: var(--bs-link-color);
   text-decoration: none;
+}
+
+/* .navbar-custom {
+  background-color: linear-gradient(red, yellow);
+} */
+
+#grad1 {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(#a7ddf2, #a7e4f2);
 }

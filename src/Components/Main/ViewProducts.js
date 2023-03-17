@@ -86,22 +86,24 @@ export const ViewProducts = () => {
                       src={x.Image}
                     />
                     <Card.Body>
-                      <Card.Title className="text-center">{x.Name}</Card.Title>
+                      <p className="text-center cartStyle">{x.Name}</p>
 
                       <Card.Text className="Description text-center">
                         {x.Description}
                       </Card.Text>
 
-                      <Card.Text className="text-center">{x.Price}</Card.Text>
+                      <Card.Text className="text-center cartPriceStyle">
+                        Rs {x.Price}
+                      </Card.Text>
                       {Allow === "true" ? (
                         <div className="d-felx justify-content-between align-items-center">
                           <button
-                            className="ms-2 edit-Button text-white btn bg-primary"
+                            className="ms-2 edit-Button"
                             onClick={AddProduct}
                           >
                             EDIT
                           </button>
-                          <button className="ms-2 delete-button text-white btn bg-primary">
+                          <button className="ms-2 delete-button ">
                             DELETE
                           </button>
                         </div>
@@ -109,7 +111,7 @@ export const ViewProducts = () => {
                         <div>
                           <h3 className="text-center"></h3>
                           <button
-                            className="cart-button mt-2 text-white btn bg-primary gradient"
+                            className="cart-button mt-2   gradient"
                             onClick={() => ViewDetail(x.Image)}
                           >
                             View Details
