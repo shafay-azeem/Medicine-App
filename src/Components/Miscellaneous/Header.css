@@ -1,0 +1,14 @@
+.navbar-nav .nav-link {
+  font-size: 15px;
+  font-weight: normal;
+  font-family: sans-serif;
+  margin-right: 20px;
+}
+.navbar-nav .nav-link:hover {
+  /* background-color: #fff; */
+  color: white;
+}
+.anchor {
+  color: var(--bs-link-color);
+  text-decoration: none;
+}

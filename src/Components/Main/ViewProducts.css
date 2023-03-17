@@ -1,0 +1,29 @@
+/* Listing Page  */
+.Description {
+  max-height: 50px;
+  overflow-y: scroll;
+  font-size: 15px;
+}
+
+.cart-button {
+  background-color: #5ebcab;
+  border-style: none;
+  padding: 10px;
+  width: 100%;
+  color: white;
+}
+.edit-Button {
+  background-color: #5ebcab;
+  border-style: none;
+  padding: 10px;
+  width: 45%;
+  color: white;
+}
+
+.delete-button {
+  background-color: #5ebcab;
+  border-style: none;
+  padding: 10px;
+  width: 45%;
+  color: white;
+}

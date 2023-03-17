@@ -1,0 +1,35 @@
+.rounded-t-5 {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+@media (max-width: 550px) {
+  .rounded-tr-lg-0 {
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0rem;
+  }
+}
+
+.form-control:focus {
+  border-color: black !important;
+  box-shadow: none !important;
+}
+.card-title {
+  background: #a7cfdf;
+  background: linear-gradient(to top, #a7cfdf 0%, #23538a 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.PostProduct {
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+::-webkit-input-placeholder {
+  font-size: 14px; /* adjust to the desired font size */
+  font-family: sans-serif;
+}
