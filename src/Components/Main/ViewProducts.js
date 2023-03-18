@@ -7,8 +7,12 @@ import {
 import Header from "../Miscellaneous/Header";
 import { Card, Container, Row } from "react-bootstrap";
 import "./ViewProducts.css";
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next"
 
 export const ViewProducts = () => {
+
+  const { t } = useTranslation();
   const [searchparams] = useSearchParams();
   let Allow = searchparams.get("Allow");
   let Edit = true;
@@ -102,10 +106,10 @@ export const ViewProducts = () => {
                             className="ms-2 edit-Button"
                             onClick={AddProduct}
                           >
-                            EDIT
+                            {t("editbtn")}
                           </button>
                           <button className="ms-2 delete-button ">
-                            DELETE
+                            {t("deletebtn")}
                           </button>
                         </div>
                       ) : (
@@ -115,7 +119,7 @@ export const ViewProducts = () => {
                             className="cart-button mt-2   gradient"
                             onClick={() => ViewDetail(x.Image, x.Price)}
                           >
-                            View Details
+                            {t("viewDetailsbtn")}
                           </button>
                         </div>
                       )}

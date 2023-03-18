@@ -14,9 +14,13 @@ import MedicineBanner from "../Authentication/MedicineBanner.png";
 import Header from "../Miscellaneous/Header";
 import { Button } from "react-bootstrap";
 import { useNavigate, createSearchParams } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next"
 
 const Login = () => {
   let Allow = true;
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
   const Admin = () => {
     navigate({
@@ -42,19 +46,19 @@ const Login = () => {
             </MDBCol>
 
             <MDBCol md="8">
-              <h5 className="card-title text-center mt-3">LOGIN IN FORM</h5>
+              <h5 className="card-title text-center mt-3">{t("loginHeading")}</h5>
               <MDBCardBody className="w-75 mx-auto mt-5">
                 <MDBInput
                   wrapperClass="mb-5"
                   type="email"
-                  placeholder="Enter Your Email"
+                  placeholder={t("enterYourEmail")}
                 />
 
                 <MDBInput
                   wrapperClass="mb-5"
                   id="form2"
                   type="password"
-                  placeholder="Enter Your Password"
+                  placeholder={t("enterYourPassword")}
                 />
 
                 <div className="d-flex justify-content-between mx-7 mb-4 me-auto">
@@ -65,9 +69,11 @@ const Login = () => {
                   label="Remember me"
                 /> */}
                   <span>
-                    Not a member ?
+                    {t("notAMember")}
                     <a href="!#" className="anchor">
-                      Signup now
+                      {t("signupNow")}
+
+
                     </a>
                   </span>
                 </div>
@@ -81,7 +87,7 @@ const Login = () => {
                     color: "rgb(109, 109, 109)",
                   }}
                 >
-                  Login in
+                  {t("login")}
                 </Button>
               </MDBCardBody>
             </MDBCol>

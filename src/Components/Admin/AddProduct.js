@@ -14,10 +14,12 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import "../Authentication/Authentication.css";
 import { useSearchParams } from "react-router-dom";
 import Header from "../Miscellaneous/Header";
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next"
 
 const AddProduct = (props) => {
   const [searchparams] = useSearchParams();
-
+  const { t } = useTranslation();
   let Edit = searchparams.get("Edit");
   return (
     <>
@@ -40,42 +42,34 @@ const AddProduct = (props) => {
                 <MDBCol md="12">
                   {Edit === "true" ? (
                     <h5 className="card-title text-center mt-3">
-                      UPDATE PRODUCT
+                      {t("updateProductHeading")}
                     </h5>
                   ) : (
                     <h5 className="card-title text-center mt-3">
-                      CREATE PRODUCT
+                      {t("createProductHeading")}
                     </h5>
                   )}
 
                   <MDBCardBody>
                     <Form className="PostProduct">
                       <Form.Group className="mb-4">
-                        <Form.Label>Product Name</Form.Label>
+                        <Form.Label>{t("productName")}</Form.Label>
                         <Form.Control
                           type="text"
                           rows={3}
-                          placeholder="Product Name"
+                          placeholder={t("productName")}
                         />
                       </Form.Group>
                       <Form.Group className="mb-4">
-                        <Form.Label>Product Price</Form.Label>
-                        <Form.Control
-                          type="text"
-                          rows={3}
-                          placeholder="Product Price"
-                        />
-                      </Form.Group>
-                      <Form.Group className="mb-4">
-                        <Form.Label>Description</Form.Label>
+                        <Form.Label>{t("description")}</Form.Label>
                         <Form.Control
                           as="textarea"
                           rows={3}
-                          placeholder="Product Description"
+                          placeholder={t("description")}
                         />
                       </Form.Group>
                       <Form.Group controlId="formFile" className="mb-4">
-                        <Form.Label>Upload Your File</Form.Label>
+                        <Form.Label>{t("uploadPicture")}</Form.Label>
                         <Form.Control type="file" />
                       </Form.Group>
                     </Form>
@@ -88,7 +82,7 @@ const AddProduct = (props) => {
                           color: "rgb(109, 109, 109)",
                         }}
                       >
-                        Update
+                        {t("updateBtn")}
                       </Button>
                     ) : (
                       <Button
@@ -99,7 +93,7 @@ const AddProduct = (props) => {
                           color: "rgb(109, 109, 109)",
                         }}
                       >
-                        Save
+                        {t("saveBtn")}
                       </Button>
                     )}
                   </MDBCardBody>

@@ -14,9 +14,12 @@ import { Button, Form } from "react-bootstrap";
 import MedicineBanner2 from "../Authentication/MedicineBanner2.jpg";
 import Header from "../Miscellaneous/Header";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next"
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const Login = () => {
     navigate({
       pathname: "/login",
@@ -38,14 +41,14 @@ const SignUp = () => {
             </MDBCol>
 
             <MDBCol md="8">
-              <h5 className="card-title text-center mt-3">SIGN UP FORM</h5>
+              <h5 className="card-title text-center mt-3">{t("signUpHeading")}</h5>
               <MDBCardBody className="w-75 mx-auto">
                 <Form className="PostProduct">
                   <Form.Group className="mb-4">
                     <Form.Control
                       type="text"
                       rows={3}
-                      placeholder="Enter Your Name"
+                      placeholder={t("enterYourName")}
                     />
                   </Form.Group>
 
@@ -53,16 +56,7 @@ const SignUp = () => {
                     <Form.Control
                       type="email"
                       rows={3}
-                      placeholder="Enter Your Email"
-                    />
-                  </Form.Group>
-
-                  <Form.Group className="mb-4">
-                    <Form.Control
-                      type="email"
-                      rows={3}
-                      password
-                      placeholder="Enter Your Password"
+                      placeholder={t("enterYourEmail")}
                     />
                   </Form.Group>
 
@@ -71,58 +65,20 @@ const SignUp = () => {
                       type="email"
                       rows={3}
                       password
-                      placeholder="Enter Your Confirm Password"
+                      placeholder={t("enterYourPassword")}
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-4">
                     <Form.Control
-                      type="text"
+                      type="email"
                       rows={3}
-                      placeholder="Enter Your Company Name"
+                      password
+                      placeholder={t("enterYourConfirmPassword")}
                     />
                   </Form.Group>
 
-                  <Form.Group className="mb-4">
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      placeholder="Company Description"
-                    />
-                  </Form.Group>
                 </Form>
-                {/* <MDBInput
-                wrapperClass="mb-5"
-                type="text"
-                placeholder="Enter Your Name"
-              />
-              <MDBInput
-                wrapperClass="mb-5"
-                type="email"
-                placeholder="Enter Your Email"
-              />
-              <MDBInput
-                wrapperClass="mb-5"
-                id="form2"
-                type="password"
-                placeholder="Enter Your Password"
-              />
-              <MDBInput
-                wrapperClass="mb-5"
-                id="form2"
-                type="password"
-                placeholder="Enter Your Confirm Password"
-              /> */}
-
-                {/* <div className="d-flex justify-content-between mx-4 mb-4">
-                <MDBCheckbox
-                  name="flexCheck"
-                  value=""
-                  id="flexCheckDefault"
-                  label="Remember me"
-                />
-                <a href="!#">Forgot password?</a>
-              </div> */}
 
                 <Button
                   onClick={Login}
@@ -133,7 +89,7 @@ const SignUp = () => {
                     color: "rgb(109, 109, 109)",
                   }}
                 >
-                  Sign Up
+                  {t("signUp")}
                 </Button>
               </MDBCardBody>
             </MDBCol>
