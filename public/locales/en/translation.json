@@ -23,5 +23,6 @@
   "updateBtn": "Update",
   "saveBtn": "Save",
   "updateProductHeading": "UPDATE PRODUCT",
-  "createProductHeading": "CREATE PRODUCT"
+  "createProductHeading": "CREATE PRODUCT",
+  "ourServices": "Our Services"
 }

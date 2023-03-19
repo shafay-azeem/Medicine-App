@@ -7,8 +7,8 @@ import { BsArrowRightSquare } from "react-icons/bs";
 import HeaderIcon from "../Miscellaneous/HeaderIcon.png";
 import "../Miscellaneous/Header.css";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import i18next from "i18next"
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 import LanguageOption from "../LanguageOption";
 const Header = (props) => {
@@ -17,8 +17,8 @@ const Header = (props) => {
 
   const { t } = useTranslation();
   const handleClick = (e) => {
-    i18next.changeLanguage(e.target.value)
-  }
+    i18next.changeLanguage(e.target.value);
+  };
 
   const navigate = useNavigate();
   const Login = () => {
@@ -41,6 +41,12 @@ const Header = (props) => {
   const About = () => {
     navigate({
       pathname: "/aboutus",
+    });
+  };
+
+  const ourService = () => {
+    navigate({
+      pathname: "/ourservices",
     });
   };
 
@@ -83,6 +89,9 @@ const Header = (props) => {
             {Allow === "true" ? null : (
               <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
             )}
+            {Allow === "true" ? null : (
+              <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
+            )}
             {Allow === "true" ? (
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
             ) : null}
@@ -93,11 +102,15 @@ const Header = (props) => {
               id="basic-nav-dropdown"
             >
               {Allow === "true" ? (
-                <NavDropdown.Item onClick={logout}>{t("LogOut")}</NavDropdown.Item>
+                <NavDropdown.Item onClick={logout}>
+                  {t("LogOut")}
+                </NavDropdown.Item>
               ) : (
                 <div>
                   {From === "Login" ? null : (
-                    <NavDropdown.Item onClick={Login}>{t("login")}</NavDropdown.Item>
+                    <NavDropdown.Item onClick={Login}>
+                      {t("login")}
+                    </NavDropdown.Item>
                   )}
 
                   {From === "SignUp" ? null : (
