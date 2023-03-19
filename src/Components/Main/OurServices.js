@@ -3,6 +3,7 @@ import Header from "../Miscellaneous/Header";
 import "../Main/OurServices.css";
 import { useTranslation } from 'react-i18next';
 import i18next from "i18next"
+import Footer from "../Miscellaneous/Footer";
 
 const OurServices = () => {
 
@@ -146,6 +147,7 @@ const OurServices = () => {
           </div>
         </div>
       </section>
+      <Footer></Footer>
     </>
   );
 };
