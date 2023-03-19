@@ -6,65 +6,69 @@ import {
     MDBRow,
     MDBIcon
 } from 'mdb-react-ui-kit';
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next"
+
 
 export default function Footer() {
+    const { t } = useTranslation();
     return (
         <MDBFooter bgColor='light' className='text-center text-lg-left'>
 
             <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
                 <div className='me-5 d-none d-lg-block'>
-                    <span>OUR BRANCHES</span>
+                    <span>{t("ourBranches")}</span>
                 </div>
 
                 <div className='d-flex'>
                     <p>
-                        Aden (main branch and head office).
+                        {t("branch1")}
                     </p>
                     <p>
-                        Sana’a
+                        {t("branch2")}
                     </p>
                     <p>
-                        Hudida
+                        {t("branch3")}
                     </p>
                     <p>
-                        Taiz
+                        {t("branch4")}
                     </p>
                     <p>
-                        Ibb
+                        {t("branch5")}
                     </p>
 
                     <p>
-                        Aldhale
+                        {t("branch6")}
                     </p>
 
                 </div>
             </section>
             <MDBContainer className='p-4'>
                 <p className='d-flex justify-content-center align-items-center'>
-                    <span className='me-3'>Companies we deal with</span>
+                    <span className='me-3'>{t("Companieswedealwith")}</span>
                 </p>
                 <MDBRow>
                     <MDBCol lg='4' md='6' className='mb-4 mb-md-0'>
-                        <h5 className='text-uppercase'>KENYA</h5>
+                        <h5 className='text-uppercase'>{t("kenya")}</h5>
 
                         <ul className='list-unstyled mb-0  text-left'>
                             <li className=' text-left'>
                                 <a className='text-dark'>
-                                    IVEE INFUSIONS EPZ LTD
+                                    {t("kenya1")}
                                 </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    UNIVERSAL CARPORATION LTD
+                                    {t("kenya2")}
                                 </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    MACS PHARMACEUTICALS LTD            </a>
+                                    {t("kenya3")}            </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    PHARMA INTERNATIONAL PHARMACEUTICAL INDUSTRIES (PICO)</a>
+                                    {t("kenya4")}</a>
                             </li>
 
                         </ul>
@@ -72,26 +76,26 @@ export default function Footer() {
 
 
                     <MDBCol lg='4' md='6' className='mb-4 mb-md-0'>
-                        <h5 className='text-uppercase'>EGYPT</h5>
+                        <h5 className='text-uppercase'>{t("EGYPT")}</h5>
 
                         <ul className='list-unstyled mb-0'>
                             <li>
                                 <a className='text-dark'>
-                                    HYGIENIC PRODUCTS LTD
+                                    {t("Egypt1")}
                                 </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    EGYPTIAN GERMAN COMPANY FOR PAPER INDUSTRIES                                </a>
+                                    {t("Egypt2")}                                </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    EGYPTIAN ARABIC FOR PAPER PRODUCTION
+                                    {t("Egypt3")}
                                 </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    EXCEL CEUTIX FOR COSMETICS INDUSTRY
+                                    {t("Egypt4")}
                                 </a>
                             </li>
                         </ul>
@@ -100,22 +104,22 @@ export default function Footer() {
 
 
                     <MDBCol lg='4' md='6' className='mb-4 mb-md-0'>
-                        <h5 className='text-uppercase mb-0'>PAKISTAN</h5>
+                        <h5 className='text-uppercase mb-0'>{t("pakistan")}</h5>
 
                         <ul className='list-unstyled'>
                             <li>
                                 <a className='text-dark'>
-                                    SAFFRON PHARMACEUTICALS PVT LTD
+                                    {t("Pakistan1")}
                                 </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    ROYAL LABORATORIES
+                                    {t("Pakistan2")}
                                 </a>
                             </li>
                             <li>
                                 <a className='text-dark'>
-                                    REVIVE PHARMKON
+                                    {t("Pakistan3")}
                                 </a>
                             </li>
 
