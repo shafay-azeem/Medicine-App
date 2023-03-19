@@ -54,7 +54,7 @@ export default function Footer() {
                         <ul className='list-unstyled mb-0  text-left'>
                             <li className=' text-left'>
                                 <a className='text-dark'>
-                                    {t("kenya1")}
+                                    {t("Kenya1")}
                                 </a>
                             </li>
                             <li>
