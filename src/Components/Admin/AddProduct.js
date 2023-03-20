@@ -14,8 +14,9 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import "../Authentication/Authentication.css";
 import { useSearchParams } from "react-router-dom";
 import Header from "../Miscellaneous/Header";
-import { useTranslation } from 'react-i18next';
-import i18next from "i18next"
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import Footer from "../Miscellaneous/Footer";
 
 const AddProduct = (props) => {
   const [searchparams] = useSearchParams();
@@ -24,7 +25,7 @@ const AddProduct = (props) => {
   return (
     <>
       <Header From={"Home"} Allow="true"></Header>
-      <MDBContainer className="my-5 ">
+      <MDBContainer className="my-5">
         <Row>
           <Col md={3}></Col>
           <Col md={6}>
@@ -104,6 +105,9 @@ const AddProduct = (props) => {
           <Col md={3}></Col>
         </Row>
       </MDBContainer>
+      <div style={{ marginTop: "5rem" }}>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

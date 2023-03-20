@@ -1,247 +1,134 @@
-import React from 'react';
-import {
-    MDBFooter,
-    MDBContainer,
-    MDBCol,
-    MDBRow,
-    MDBIcon
-} from 'mdb-react-ui-kit';
-import { useTranslation } from 'react-i18next';
-import i18next from "i18next"
-import '../../App.css';
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "../../App.css";
+import "../Miscellaneous/Footer.css";
 
 export default function Footer() {
-    let images = {
-        facebook: require('./Footer Images/facebook.png'),
-        google: require('./Footer Images/google.png'),
-        instagram: require('./Footer Images/instagram.png'),
-        youtube: require('./Footer Images/youtube.png'),
+  let images = {
+    facebook: require("./Footer Images/facebook.png"),
+    google: require("./Footer Images/google.png"),
+    instagram: require("./Footer Images/instagram.png"),
+    youtube: require("./Footer Images/youtube.png"),
+    CompanyLogo: require("./Footer Images/CompanyLogo.png"),
+  };
 
-    }
-    const { t } = useTranslation();
-    return (
-        <>
-            {/* <MDBFooter bgColor='light' className='text-center text-lg-left'>
+  const { t } = useTranslation();
 
-                <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-                    <div className='me-5 d-none d-lg-block'>
-                        <span>{t("ourBranches")}</span>
-                    </div>
+  return (
+    <>
+      <footer class="bg-primary-dark">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <div className="col-md-6">
+                <h4 className="widget_title">{t("ourBranches")}</h4>
+              </div>
+            </div>
+            <div className="col-md-8">
+              <div className="d-flex justify-content-end flex-row flex-lg-row flex-column">
+                <p>{t("branch1")}</p>&nbsp;&nbsp;
+                <p>{t("branch2")}</p>&nbsp;&nbsp;
+                <p>{t("branch3")}</p>&nbsp;&nbsp;
+                <p>{t("branch4")}</p>&nbsp;&nbsp;
+                <p>{t("branch5")}</p>&nbsp;&nbsp;
+                <p>{t("branch6")}</p>
+              </div>
+            </div>
+          </div>
+          <hr></hr>
+        </div>
 
-                    <div className='d-flex'>
-                        <p>
-                            {t("branch1")}
-                        </p>
-                        <p>
-                            {t("branch2")}
-                        </p>
-                        <p>
-                            {t("branch3")}
-                        </p>
-                        <p>
-                            {t("branch4")}
-                        </p>
-                        <p>
-                            {t("branch5")}
-                        </p>
-
-                        <p>
-                            {t("branch6")}
-                        </p>
-
-                    </div>
-                </section>
-                <MDBContainer className='p-4'>
-                    <p className='d-flex justify-content-center align-items-center'>
-                        <span className='me-3'>{t("Companieswedealwith")}</span>
-                    </p>
-                    <MDBRow>
-                        <MDBCol lg='4' md='6' className='mb-4 mb-md-0'>
-                            <h5 className='text-uppercase'>{t("kenya")}</h5>
-
-                            <ul className='list-unstyled mb-0  text-left'>
-                                <li className=' text-left'>
-                                    <a className='text-dark'>
-                                        {t("Kenya1")}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("kenya2")}
-                                    </a>  {t("kenya2")}
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("kenya3")}            </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("kenya4")}</a>
-                                </li>
-
-                            </ul>
-                        </MDBCol>
-
-
-                        <MDBCol lg='4' md='6' className='mb-4 mb-md-0'>
-                            <h5 className='text-uppercase'>{t("EGYPT")}</h5>
-
-                            <ul className='list-unstyled mb-0'>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Egypt1")}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Egypt2")}                                </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Egypt3")}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Egypt4")}
-                                    </a>
-                                </li>
-                            </ul>
-                        </MDBCol>
-
-
-
-                        <MDBCol lg='4' md='6' className='mb-4 mb-md-0'>
-                            <h5 className='text-uppercase mb-0'>{t("pakistan")}</h5>
-
-                            <ul className='list-unstyled'>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Pakistan1")}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Pakistan2")}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className='text-dark'>
-                                        {t("Pakistan3")}
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </MDBCol>
-
-                    </MDBRow>
-                </MDBContainer>
-
-                <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-                    &copy; {new Date().getFullYear()} Copyright:{' '}
-                    <a className='text-dark' href='https://mdbootstrap.com/'>
-                        MDBootstrap.com
-                    </a>
-                </div>
-            </MDBFooter> */}
-
-
-            {/* -------------------ANOTHER FOOTER------------------- */}
-            <div className="footer-siderbar">
-                <div className='container py-2'>
-                    <div className='row' >
-                        <div className='col-md-6'>
-                            <h2>{t("ourBranches")}</h2>
-                        </div>
-                        <div className='Names col-md-6 d-flex align-items-center justify-content-around'>
-                            <p>
-                                {t("branch1")}
-                            </p>
-                            <p>
-                                {t("branch2")}
-                            </p>
-                            <p>
-                                {t("branch3")}
-                            </p>
-                            <p>
-                                {t("branch4")}
-                            </p>
-                            <p>
-                                {t("branch5")}
-                            </p>
-
-                            <p>
-                                {t("branch6")}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <hr className='container' />
-
-                <h2 className='container py-3'>{t("Companieswedealwith")}</h2>
-                <div className="container py-3">
-                    <div className="row Names">
-                        <div className="widget col-md-3">
-                            <div>
-                                <h5>{t("kenya")}</h5>
-                                {/* <ul> */}
-                                <li><a>{t("Kenya1")}</a></li>
-                                <li><a>{t("kenya2")}</a></li>
-                                <li><a >{t("kenya3")}</a></li>
-                                <li><a>{t("kenya4")}</a></li>
-                                {/* </ul> */}
-
-                            </div>
-                        </div>
-                        <div className="widget col-md-3">
-                            <div>
-                                <h5>{t("EGYPT")}</h5>
-                                {/* <ul> */}
-                                <li><a>{t("Egypt1")}</a></li>
-                                <li><a>{t("Egypt2")}</a></li>
-                                <li><a>{t("Egypt3")}</a></li>
-                                <li><a>{t("Egypt4")}</a></li>
-                                {/* </ul> */}
-                            </div>
-                        </div>
-                        <div className="widget col-md-3 md-flex justify-content-end">
-                            <div>
-                                <h5>{t("pakistan")}</h5>
-                                {/* <ul> */}
-                                <li><a>{t("Pakistan1")}</a></li>
-                                <li><a>{t("Pakistan2")}</a></li>
-                                <li><a>{t("Pakistan3")}</a></li>
-                                {/* </ul> */}
-
-                            </div>
-                        </div>
-                        <div className="widget col-md-3 md-flex justify-content-end">
-                            <div>
-                                <h5>SUBSCRIBE TODAY</h5>
-                                <ul>
-                                </ul>
-                                <div className='images d-flex align-items-center justify-content-around'>
-                                    <img className='Icon-Img' src={images.google} alt='google' />
-                                    <img className='Icon-Img' src={images.youtube} alt='youtube' />
-                                    <img className='Icon-Img' src={images.instagram} alt='instagram' />
-                                    <img className='Icon-Img' src={images.facebook} alt='facebook' />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='text-center text-dark py-2'>
-                    &copy; {new Date().getFullYear()} Copyright:{' '}
-                    <a className='text-dark'>
-                        MDBootstrap.com
-                    </a>
-                </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+              <div className="px-5">
+                <img
+                  className="img-fluid"
+                  src={images.CompanyLogo}
+                  alt="CompanyLogo"
+                />
+              </div>
             </div>
 
-        </>
+            <div class="col-sm-3">
+              <div class="widget menu">
+                <h3 class="widget_title">{t("kenya")}</h3>
+                <div class="widget_content">
+                  <ul>
+                    <li>{t("Kenya1")}</li>
 
-    );
+                    <li>{t("kenya2")}</li>
+                    <li>{t("kenya3")}</li>
+                    <li>{t("kenya4")}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="widget menu">
+                <h3 class="widget_title">{t("EGYPT")}</h3>
+                <div class="widget_content">
+                  <ul>
+                    <li>{t("Egypt1")}</li>
+
+                    <li>{t("Egypt2")}</li>
+                    <li>{t("Egypt3")}</li>
+                    <li>{t("Egypt4")}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="widget menu">
+                <h3 class="widget_title">{t("pakistan")}</h3>
+                <div class="widget_content">
+                  <ul>
+                    <li>{t("Pakistan1")}</li>
+
+                    <li>{t("Pakistan2")}</li>
+                    <li>{t("Pakistan3")}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <p class="text-center">
+                  {t("Copyright")} &copy; <a>{t("MuneerAliCompany")}</a>
+                </p>
+              </div>
+              <div class="col-md-2 mt-3 m-sm-0">
+                <div class="social-icons medium justify-content-sm-end justify-content-center">
+                  <div class="item">
+                    <a href="#">
+                      <span class="fab fa-facebook-f"></span>
+                    </a>
+                  </div>
+
+                  <div class="item">
+                    <a href="#">
+                      <span class="fab fa-linkedin-in"></span>
+                    </a>
+                  </div>
+
+                  <div class="item">
+                    <a href="#">
+                      <span class="fab fa-twitter"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 }

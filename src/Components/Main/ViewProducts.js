@@ -7,11 +7,11 @@ import {
 import Header from "../Miscellaneous/Header";
 import { Card, Container, Row } from "react-bootstrap";
 import "./ViewProducts.css";
-import { useTranslation } from 'react-i18next';
-import i18next from "i18next"
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import Footer from "../Miscellaneous/Footer";
 
 export const ViewProducts = () => {
-
   const { t } = useTranslation();
   const [searchparams] = useSearchParams();
   let Allow = searchparams.get("Allow");
@@ -65,7 +65,7 @@ export const ViewProducts = () => {
   return (
     <div>
       <Header From={"Home"} Allow={Allow}></Header>
-      <Container style={{ marginTop: "4rem" }}>
+      <Container style={{ marginTop: "4rem", marginBottom: "5rem" }}>
         <Row>
           {medicineList?.map((x, index) => {
             return (
@@ -131,6 +131,7 @@ export const ViewProducts = () => {
           })}
         </Row>
       </Container>
+      <Footer></Footer>
     </div>
   );
 };

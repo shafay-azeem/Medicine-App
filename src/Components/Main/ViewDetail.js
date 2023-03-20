@@ -1,35 +1,29 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import Footer from "../Miscellaneous/Footer";
 import Header from "../Miscellaneous/Header";
 import "./ViewDetail.css";
 
 const ViewDetail = () => {
-  // let img = {
-  //     mainImage: require('../assets/images/burger.png'),
-
   const [searchparams] = useSearchParams();
 
   let img = searchparams.get("img");
   let price = searchparams.get("price");
 
-  // }
   return (
     <>
       <Header From={"Home"}></Header>
       <div
         className="shadow container py-5 bg-white"
-        style={{ marginTop: "7rem" }}
+        style={{ marginTop: "7rem", marginBottom: "5rem" }}
       >
         <div className="row">
-          {/* Col of 1  */}
           <div className="col-md-1"></div>
 
-          {/* Col of 4  */}
           <div className="col-md-4">
             <img className="Image" src={img} alt="img" />
           </div>
 
-          {/* Col of 6  */}
           <div className="col-md-6">
             <h1 style={{ textTransform: "capitalize" }}>
               Some heading goes here
@@ -49,21 +43,15 @@ const ViewDetail = () => {
             </p>
 
             <p style={{ fontSize: "25px" }}>Rs. {price}</p>
-
-            {/* <div className="buttons d-flex align-items-center justify-content-start pt-3">
-                            <button className='Buy-Button bg-gradient'>BUY NOW</button>
-                            <button className='Wish-Button bg-gradient ms-3'>ADD TO WISHLIST</button>
-                        </div> */}
           </div>
 
-          {/* Col of 1  */}
           <div className="col-md-1"></div>
           <div className="container">
             <hr className="mt-5" />
           </div>
         </div>
-        {/* <h3 className='text-center mt-3'>Recent Views</h3> */}
       </div>
+      <Footer></Footer>
     </>
   );
 };

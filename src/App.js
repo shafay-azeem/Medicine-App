@@ -7,8 +7,13 @@ import AddProduct from "./Components/Admin/AddProduct";
 import SignUp from "./Components/Authentication/SignUp";
 import Login from "./Components/Authentication/Login";
 import OurServices from "./Components/Main/OurServices";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 function App() {
+  const { t, i18n } = useTranslation();
+  document.body.dir = i18n.dir();
+
   return (
     <div>
       <BrowserRouter>

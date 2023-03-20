@@ -14,8 +14,9 @@ import MedicineBanner from "../Authentication/MedicineBanner.png";
 import Header from "../Miscellaneous/Header";
 import { Button } from "react-bootstrap";
 import { useNavigate, createSearchParams } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import i18next from "i18next"
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+import Footer from "../Miscellaneous/Footer";
 
 const Login = () => {
   let Allow = true;
@@ -46,7 +47,9 @@ const Login = () => {
             </MDBCol>
 
             <MDBCol md="8">
-              <h5 className="card-title text-center mt-3">{t("loginHeading")}</h5>
+              <h5 className="card-title text-center mt-3">
+                {t("loginHeading")}
+              </h5>
               <MDBCardBody className="w-75 mx-auto mt-5">
                 <MDBInput
                   wrapperClass="mb-5"
@@ -72,8 +75,6 @@ const Login = () => {
                     {t("notAMember")}
                     <a href="!#" className="anchor">
                       {t("signupNow")}
-
-
                     </a>
                   </span>
                 </div>
@@ -94,6 +95,10 @@ const Login = () => {
           </MDBRow>
         </MDBCard>
       </MDBContainer>
+
+      <div style={{ marginTop: "5rem" }}>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
