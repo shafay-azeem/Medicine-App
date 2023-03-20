@@ -78,7 +78,6 @@ const Header = (props) => {
             />
             <span className="align-middle">{t("MuneerAliCompany")}</span>
 
-            <LanguageOption onChange={(e) => handleClick(e)}></LanguageOption>
           </div>
         </Navbar.Brand>
 
@@ -96,6 +95,10 @@ const Header = (props) => {
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
             ) : null}
             {/* {Allow ? <Nav.Link >Update Product</Nav.Link> : null} */}
+
+            <div className="d-flex align-items-center me-2">
+              <LanguageOption onChange={(e) => handleClick(e)}></LanguageOption>
+            </div>
 
             <NavDropdown
               title={<BsArrowRightSquare style={{ fontSize: "18px" }} />}
@@ -120,6 +123,7 @@ const Header = (props) => {
                   )}
                 </div>
               )}
+
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
