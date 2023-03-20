@@ -113,3 +113,19 @@
     margin: 5px 0px;
   }
 }
+
+
+/* ABOUT US   */
+
+.Image {
+  background-image: url("./Components/Main/aboutUsBanner.png");
+}
+
+
+@media screen and (max-width: 900px) {
+  .Main {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}

@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import "../../App.css";
 import Header from "../Miscellaneous/Header";
 import AboutBanner from "./aboutUsBanner.png";
+import Footer from "../Miscellaneous/Footer"
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 
@@ -16,7 +17,7 @@ export const AboutUs = () => {
   return (
     <>
       <Header Allow={Allow}></Header>
-      <div className="container py-5" style={{ marginTop: "8rem" }}>
+      {/* <div className="container py-5" style={{ marginTop: "8rem" }}>
         <div className="row shadow">
           <div className="col-md-6 ">
             <p>{t("AboutUSStart")}</p>
@@ -134,7 +135,116 @@ export const AboutUs = () => {
             <img className="img-fluid" src={AboutBanner} alt="img" />
           </div>
         </div>
+      </div> */}
+
+      <div className="container py-5 align-items-center">
+        <div className="row py-4 d-flex align-items-center justify-content-center">
+          <div className="col-lg-6">
+            <img className="img-fluid" src={AboutBanner} alt='cover' />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-lg-12 mt-3">
+            <h2 className="text-center">
+              {t("AboutUSStart")}
+            </h2>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-lg-12 my-3 py-4 shadow">
+            <div className="inner p-3">
+              <h2 className="text-center">
+                {t("aboutUsTitle")}
+              </h2>
+              <h3 className="px-4 py-2 text-center">
+                {t("whoWeAreHeading")}
+              </h3>
+              <p className="text-start">
+                {t("point1")}
+                <br />
+                {t("point2")}
+                <br />
+                {t("point3")}
+                <br />
+                {t("point4")}
+                <br />
+                {t("point5")}
+                <br />
+                {t("point6")}
+                <br />
+                {t("point7")}
+                <br />
+                {t("point8")}
+                <br />
+                {t("point9")}
+                <br />
+                {t("point10")}
+                <br />
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="Main row">
+          {/* 1 */}
+          <div className="Sub-Div col-lg-3 my-5 shadow ">
+            <div className="inner p-3">
+              <h3 className="text-center">{t("visionHeading")}</h3>
+              <p className="text-center">{t("visionDescription")}</p>
+            </div>
+          </div>
+
+          {/* 2 */}
+          <div className="col-lg-3 my-5 shadow d-flex align-items-center justify-content-center">
+            <div className="inner p-3">
+              <h3 className="text-center">{t("missionHeading")}</h3>
+              <p className="text-center">{t("missionDescription")}</p>
+            </div>
+          </div>
+
+          {/* 3 */}
+          <div className="col-lg-3 my-5 shadow">
+            <div className="inner p-3">
+              <h3 className="text-center">{t("valueHeading")}</h3>
+              <p className="text-center">
+                {t("visionList1")}
+                <br />
+                {t("visionList2")}
+                <br />
+                {t("visionList3")}
+                <br />
+                {t("visionList4")}
+                <br />
+              </p>
+            </div>
+          </div>
+
+          {/* 4 */}
+          <div className="col-lg-3 shadow  my-5 shadow d-flex align-items-center justify-content-center">
+            <div className="inner p-3">
+              <h3 className="text-center">{t("legalityHeading")}</h3>
+              <p className="text-center">
+                {t("legalityPoint1")}
+                <br />
+                {t("legalityPoint2")}
+                <br />
+                {t("legalityPoint3")}
+                <br />
+                {t("legalityPoint4")}
+                <br />
+                {t("legalityPoint5")}
+                <br />
+                {t("legalityPoint6")}
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };
