@@ -14,7 +14,7 @@ const ViewDetail = () => {
   return (
     <>
       <Header From={"Home"}></Header>
-      <div className="container mb-5">
+      <div className="container mb-5" dir="ltr">
         <div
           className="row d-flex justify-content-center"
           style={{ marginTop: "7rem" }}
