@@ -44,10 +44,3 @@
   font-weight: 500;
   cursor: pointer;
 }
-
-.Banner-Image {
-  background-image: url("./banner.jpg");
-  height: 500px;
-  background-size: cover !important;
-  background-position: center center !important;
-}

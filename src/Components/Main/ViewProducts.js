@@ -73,14 +73,19 @@ export const ViewProducts = () => {
       <div className="container">
         <Header From={"Home"} Allow={Allow}></Header>
 
-        <div className="row py-4 d-flex">
+        <div className="row no-gutter flex-column">
           <div
             style={{
-              marginTop: "40px",
+              marginTop: "70px",
             }}
-            className="Banner-Image"
-          ></div>
+          >
+            <img src={img.banner} class="img-fluid" />
+          </div>
         </div>
+
+        {/* <div class="row no-gutter flex-column mt-5">
+          <img src={img.banner} class="img-fluid" />
+        </div> */}
         <Container style={{ marginTop: "4rem", marginBottom: "5rem" }}>
           <Row>
             {medicineList?.map((x, index) => {

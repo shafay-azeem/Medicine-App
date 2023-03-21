@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -9,16 +9,29 @@ import "../Miscellaneous/Header.css";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import ReactFlagsSelect from "react-flags-select";
 
 import LanguageOption from "../LanguageOption";
 const Header = (props) => {
   let From = props?.From;
   let Allow = props?.Allow;
 
+  const [selected, setSelected] = useState("GB");
+
   const { t } = useTranslation();
-  const handleClick = (e) => {
-    i18next.changeLanguage(e.target.value);
-  };
+  // const handleClick = (e) => {
+  //   i18next.changeLanguage(e.target.value);
+  // };
+
+  useEffect(() => {
+    if (selected === "GB") {
+      i18next.changeLanguage("en");
+    } else if (selected === "YE") {
+      i18next.changeLanguage("arb");
+    } else {
+      i18next.changeLanguage("en");
+    }
+  }, [selected]);
 
   const navigate = useNavigate();
   const Login = () => {
@@ -110,7 +123,14 @@ const Header = (props) => {
             {/* {Allow ? <Nav.Link >Update Product</Nav.Link> : null} */}
 
             <div className="d-flex align-items-center me-2">
-              <LanguageOption onChange={(e) => handleClick(e)}></LanguageOption>
+              {/* <LanguageOption onChange={(e) => handleClick(e)}></LanguageOption> */}
+              <ReactFlagsSelect
+                selected={selected}
+                onSelect={setSelected}
+                placeholder="Select Language"
+                countries={["GB", "YE"]}
+                customLabels={{ GB: "EN ", YE: "YE" }}
+              />
             </div>
 
             <NavDropdown
