@@ -1,27 +1,107 @@
-.Image {
-  width: 100%;
-  max-width: 391px;
-  height: 100%;
+.card {
+  border: none;
 }
 
-.Buy-Button {
-  background-color: black;
-  color: white;
-  border-radius: 2px;
-  border-color: black;
-  border-style: none;
-  padding: 10px;
+.brand {
+  font-size: 13px;
 }
 
-.Wish-Button {
-  background-color: grey;
-  color: white;
-  border-color: grey;
-  border-radius: 2px;
-  border-style: none;
-  padding: 10px;
+.act-price {
+  color: red;
+  font-weight: 700;
 }
-.Heading {
-  font-family: sans-serif;
+
+.dis-price {
+  text-decoration: line-through;
+}
+
+.about {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.color {
+  margin-bottom: 10px;
+}
+
+label.radio {
+  cursor: pointer;
+}
+
+label.radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+label.radio span {
+  padding: 2px 9px;
+  border: 2px solid #ff0000;
+  display: inline-block;
+  color: #ff0000;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+label.radio input:checked+span {
+  border-color: #ff0000;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+}
+
+.btn-danger:hover {
+  background-color: #da0606 !important;
+  border-color: #da0606 !important;
+}
+
+.btn-danger:focus {
+  box-shadow: none;
+}
+
+.cart i {
+  margin-right: 10px;
+}
+
+.productName {
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.priceStyle {
+  color: #c00;
   font-weight: 600;
+  font-size: 20px;
+}
+
+.btnStyling {
+  margin-top: 16px;
+  display: block;
+}
+
+.btnTextStyling {
+  background: #6c19ff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btnTextStyling:hover {
+  background: #fff;
+  color: #6c19ff;
+  border: 1px solid #6c19ff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
 }

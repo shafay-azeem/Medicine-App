@@ -9,48 +9,77 @@ const ViewDetail = () => {
 
   let img = searchparams.get("img");
   let price = searchparams.get("price");
-
+  let description = searchparams.get("description");
+  let name = searchparams.get("name");
   return (
     <>
       <Header From={"Home"}></Header>
-      <div
-        className="shadow container py-5 bg-white"
-        style={{ marginTop: "7rem", marginBottom: "5rem" }}
-      >
-        <div className="row">
-          <div className="col-md-1"></div>
+      <div className="container mb-5">
+        <div
+          className="row d-flex justify-content-center"
+          style={{ marginTop: "7rem" }}
+        >
+          <div className="col-md-10">
+            <div className="card">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="images p-3">
+                    <div className="text-center p-4">
+                      <img id="main-image" src={img} width="250" />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="product p-4">
+                    <div className="mt-4 mb-3">
+                      <span className="text-uppercase text-blue brand">
+                        Tag
+                      </span>
+                      <h5 className="text-uppercase productName">{name}</h5>
+                      <div className="price d-flex flex-row align-items-center">
+                        <div className="ml-2 priceStyle">
+                          <span>Rs {price}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="about">{description}</p>
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr>
+                          <th>Category</th>
+                          <td>&nbsp;antibiotic</td>
+                        </tr>
+                        <tr>
+                          <th>Type</th>
+                          <td>&nbsp;capsule</td>
+                        </tr>
+                        <tr>
+                          <th>&nbsp;Milligram</th>
+                          <td>&nbsp;500mg</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-          <div className="col-md-4">
-            <img className="Image" src={img} alt="img" />
-          </div>
-
-          <div className="col-md-6">
-            <h1 style={{ textTransform: "capitalize" }}>
-              Some heading goes here
-            </h1>
-
-            <p style={{ textAlign: "justify" }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-
-            <p style={{ fontSize: "25px" }}>Rs. {price}</p>
-          </div>
-
-          <div className="col-md-1"></div>
-          <div className="container">
-            <hr className="mt-5" />
+                    <div class="d-flex">
+                      <div className="btnStyling me-3">
+                        <a href="#" className="btnTextStyling">
+                          Edit
+                        </a>
+                      </div>
+                      <div className="btnStyling">
+                        <a href="#" className="btnTextStyling">
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <Footer></Footer>
     </>
   );
