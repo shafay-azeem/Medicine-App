@@ -56,6 +56,12 @@ const Header = (props) => {
     });
   };
 
+  const staticCard = () => {
+    navigate({
+      pathname: "/staticCards",
+    });
+  };
+
   const Home = () => {
     navigate({
       pathname: "/",
@@ -77,7 +83,6 @@ const Header = (props) => {
               height="25px"
             />
             <span className="align-middle">{t("MuneerAliCompany")}</span>
-
           </div>
         </Navbar.Brand>
 
@@ -85,6 +90,9 @@ const Header = (props) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
+            {Allow === "true" ? null : (
+              <Nav.Link onClick={staticCard}>{t("imports")}</Nav.Link>
+            )}
             {Allow === "true" ? null : (
               <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
             )}
@@ -123,7 +131,6 @@ const Header = (props) => {
                   )}
                 </div>
               )}
-
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

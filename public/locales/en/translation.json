@@ -104,5 +104,15 @@
   "legalityPoint4": "Tax card.",
   "legalityPoint5": "Membership of importers.",
   "legalityPoint6": "Member in Yemen Red Crescent.",
-  "Copyright": "Copyright"
+  "Copyright": "Copyright",
+  "imports": "Imports",
+
+  "StaticNumber": "Number Of",
+
+  "ProductsImportedPerYear": "Products Imported Per Year",
+  "Branches": "Branches",
+  "Cars": "Cars",
+  "Cutsomers": "Customers",
+
+  "OurImports": "Our Imports"
 }

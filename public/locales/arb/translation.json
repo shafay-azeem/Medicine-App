@@ -105,5 +105,15 @@
   "legalityPoint4": "البطاقة الضريبية",
   "legalityPoint5": "عضوية المستوردين",
   "legalityPoint6": "عضو في الهلال الأحمر اليمني العضوية في مجلس الأمم",
-  "Copyright": "حقوق النشر"
+  "Copyright": "حقوق النشر",
+
+  "imports": "الواردات",
+
+  "StaticNumber": "رقم ال",
+  "ProductsImportedPerYear": "المنتجات المستوردة سنويا",
+  "Branches": "الفروع",
+  "Cars": "سيارات",
+  "Cutsomers": "عملاء",
+
+  "OurImports": "وارداتنا"
 }

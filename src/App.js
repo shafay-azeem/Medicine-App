@@ -9,6 +9,7 @@ import Login from "./Components/Authentication/Login";
 import OurServices from "./Components/Main/OurServices";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import StaticCards from "./Components/Miscellaneous/StaticCards";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -26,6 +27,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/staticCards" element={<StaticCards />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -72,11 +72,11 @@ export const ViewProducts = () => {
               <>
                 <div className="col-lg-4 d-flex justify-content-center">
                   <Card
-                    className="shadow col-md-4 mb-4 mt-4"
+                    className="border  col-md-4 mb-4 mt-4"
                     style={{
                       width: "20rem",
                       borderStyle: "none",
-                      maxHeight: "500px",
+                      maxHeight: "450px",
                     }}
                   >
                     <Card.Img
@@ -97,9 +97,9 @@ export const ViewProducts = () => {
                         {x.Description}
                       </Card.Text>
 
-                      <Card.Text className="text-center cartPriceStyle">
+                      {/* <Card.Text className="text-center cartPriceStyle">
                         Rs {x.Price}
-                      </Card.Text>
+                      </Card.Text> */}
                       {Allow === "true" ? (
                         <div className="d-felx justify-content-between align-items-center">
                           <button
@@ -114,13 +114,19 @@ export const ViewProducts = () => {
                         </div>
                       ) : (
                         <div>
-                          <h3 className="text-center"></h3>
+                          <p
+                            onClick={() => ViewDetail(x.Image, x.Price)}
+                            className="text-center viewDetailText"
+                          >
+                            {t("viewDetailsbtn")}
+                          </p>
+                          {/* <h3 className="text-center"></h3>
                           <button
                             className="cart-button mt-2   gradient"
                             onClick={() => ViewDetail(x.Image, x.Price)}
                           >
                             {t("viewDetailsbtn")}
-                          </button>
+                          </button> */}
                         </div>
                       )}
                     </Card.Body>

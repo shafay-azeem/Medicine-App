@@ -56,7 +56,6 @@ export default function Footer() {
                 <div class="widget_content">
                   <ul>
                     <li>{t("Kenya1")}</li>
-
                     <li>{t("kenya2")}</li>
                     <li>{t("kenya3")}</li>
                     <li>{t("kenya4")}</li>
