@@ -62,14 +62,10 @@ const ViewDetail = () => {
 
                     <div class="d-flex">
                       <div className="btnStyling me-3">
-                        <a href="#" className="btnTextStyling">
-                          Edit
-                        </a>
+                        <a className="btnTextStyling">Edit</a>
                       </div>
                       <div className="btnStyling">
-                        <a href="#" className="btnTextStyling">
-                          Delete
-                        </a>
+                        <a className="btnTextStyling">Delete</a>
                       </div>
                     </div>
                   </div>

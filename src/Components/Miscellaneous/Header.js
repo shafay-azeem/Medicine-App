@@ -70,6 +70,11 @@ const Header = (props) => {
       }).toString(),
     });
   };
+
+  let img = {
+    logo: require("../Miscellaneous/headerLogo2.png"),
+  };
+
   return (
     <Navbar expand="lg" fixed="top" className="navbar" id="grad1">
       <Container>
@@ -77,10 +82,10 @@ const Header = (props) => {
           <div className="d-flex">
             <img
               className="preview me-2 mx-auto align-middle"
-              src={HeaderIcon}
+              src={img.logo}
               alt=""
-              width="25px"
-              height="25px"
+              width="35px"
+              height="35px"
             />
             <span className="align-middle">{t("MuneerAliCompany")}</span>
           </div>

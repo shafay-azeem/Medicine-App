@@ -13,8 +13,8 @@ import Footer from "../Miscellaneous/Footer";
 
 export const ViewProducts = () => {
   let img = {
-    banner: require('./banner.jpg')
-  }
+    banner: require("./banner.jpg"),
+  };
 
   const { t } = useTranslation();
   const [searchparams] = useSearchParams();
@@ -70,22 +70,16 @@ export const ViewProducts = () => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container">
         <Header From={"Home"} Allow={Allow}></Header>
-        {/* 
-      <div className="container-fluid">
-        <div className="row py-4 d-flex align-items-center justify-content-center">
-          <div className="Banner-Image">
-          </div>
-        </div>
-      </div> */}
-
 
         <div className="row py-4 d-flex">
-          <div style={{
-            marginTop: '100px'
-          }} className="Banner-Image">
-          </div>
+          <div
+            style={{
+              marginTop: "40px",
+            }}
+            className="Banner-Image"
+          ></div>
         </div>
         <Container style={{ marginTop: "4rem", marginBottom: "5rem" }}>
           <Row>
@@ -113,16 +107,8 @@ export const ViewProducts = () => {
                         src={x.Image}
                       />
                       <Card.Body>
-
                         <p className="text-center cartStyle">{x.Name}</p>
 
-                        {/* <Card.Text className="Description text-center">
-                          {x.Description}
-                        </Card.Text> */}
-
-                        {/* <Card.Text className="text-center cartPriceStyle">
-                        Rs {x.Price}
-                      </Card.Text> */}
                         {Allow === "true" ? (
                           <div className="d-felx justify-content-between align-items-center">
                             <button
@@ -138,19 +124,18 @@ export const ViewProducts = () => {
                         ) : (
                           <div>
                             <p
-                              onClick={() => ViewDetail(x.Image, x.Price, x.Description,
-                                x.Name)}
+                              onClick={() =>
+                                ViewDetail(
+                                  x.Image,
+                                  x.Price,
+                                  x.Description,
+                                  x.Name
+                                )
+                              }
                               className="text-center viewDetailText"
                             >
                               {t("viewDetailsbtn")}
                             </p>
-                            {/* <h3 className="text-center"></h3>
-                          <button
-                            className="cart-button mt-2   gradient"
-                            onClick={() => ViewDetail(x.Image, x.Price)}
-                          >
-                            {t("viewDetailsbtn")}
-                          </button> */}
                           </div>
                         )}
                       </Card.Body>
