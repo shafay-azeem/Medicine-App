@@ -37,9 +37,9 @@ const ViewDetail = () => {
                       </span>
                       <h5 className="text-uppercase productName">{name}</h5>
                       <div className="price d-flex flex-row align-items-center">
-                        <div className="ml-2 priceStyle">
+                        {/* <div className="ml-2 priceStyle">
                           <span>Rs {price}</span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <p className="about">{description}</p>

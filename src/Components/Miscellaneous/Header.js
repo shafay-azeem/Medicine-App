@@ -22,19 +22,19 @@ const Header = (props) => {
   // const handleClick = (e) => {
   //   i18next.changeLanguage(e.target.value);
   // };
-  let helper = selected
+  let helper = selected;
   useEffect(() => {
     if (selected === "GB") {
       i18next.changeLanguage("en");
-      helper = "GB"
-      localStorage.setItem("helper", helper)
+      helper = "GB";
+      localStorage.setItem("helper", helper);
     } else if (selected === "YE") {
       i18next.changeLanguage("arb");
-      helper = "YE"
-      localStorage.setItem("helper", helper)
+      helper = "YE";
+      localStorage.setItem("helper", helper);
     } else {
-      localStorage.getItem("helper")
-      setSelected(localStorage.getItem("helper"))
+      localStorage.getItem("helper");
+      setSelected(localStorage.getItem("helper"));
     }
   }, [selected]);
 
@@ -105,7 +105,9 @@ const Header = (props) => {
               width="35px"
               height="35px"
             />
-            <span className="align-middle">{t("MuneerAliCompany")}</span>
+            <span className="align-middle" onClick={logout}>
+              {t("MuneerAliCompany")}
+            </span>
           </div>
         </Navbar.Brand>
 
@@ -134,8 +136,7 @@ const Header = (props) => {
                 onSelect={setSelected}
                 placeholder="Select Language"
                 countries={["GB", "YE"]}
-                customLabels={{ GB: "EN ", YE: "YE" }}
-
+                customLabels={{ GB: " ", YE: " " }}
               />
             </div>
 

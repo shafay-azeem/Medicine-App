@@ -1,7 +1,7 @@
 /* ====== Footer =====*/
 footer {
   color: #020917;
-  background-image: linear-gradient(#a7ddf2, #a7e4f2);
+  background-color: #001232;
   padding: 30px 0 0;
 }
 footer a {
@@ -23,6 +23,13 @@ footer .widget {
 footer .widget_title {
   font-size: 22px;
   font-weight: 700;
+  color: #b2b7c1;
+}
+
+footer .widget_title:hover {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -32,7 +39,7 @@ footer .widget_title {
 }
 
 .copyright {
-  background-color: #85d0ea;
+  background-color: white;
   color: #000;
   padding: 20px;
   text-align: center;
@@ -61,4 +68,20 @@ footer .widget_title {
   display: block;
   font-weight: 400;
   font-size: 15px;
+  color: #b2b7c1;
+}
+
+.widget.menu ul li:hover {
+  padding: 5px 0;
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+}
+
+.branchTitle {
+  color: #b2b7c1;
+}
+.branchTitle:hover {
+  color: white;
 }

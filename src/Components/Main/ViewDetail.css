@@ -46,7 +46,7 @@ label.radio span {
   text-transform: uppercase;
 }
 
-label.radio input:checked+span {
+label.radio input:checked + span {
   border-color: #ff0000;
   background-color: #ff0000;
   color: #fff;
@@ -74,6 +74,7 @@ label.radio input:checked+span {
   font-size: 35px;
   font-weight: 700;
   margin-top: 5px;
+  color: #212529;
 }
 
 .priceStyle {
@@ -88,20 +89,22 @@ label.radio input:checked+span {
 }
 
 .btnTextStyling {
-  background: #6c19ff;
+  background: #224480;
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .btnTextStyling:hover {
   background: #fff;
-  color: #6c19ff;
-  border: 1px solid #6c19ff;
+  color: #224480;
+  border: 1px solid #224480;
   padding: 10px 20px;
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
+  cursor: pointer;
 }

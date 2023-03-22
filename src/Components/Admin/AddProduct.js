@@ -140,8 +140,10 @@ const AddProduct = (props) => {
               style={{
                 width: "20%",
                 marginTop: "12px",
+                backgroundColor: "#224480",
+                color: "white",
               }}
-              class=" my-Upload file btn btn-primary btn-Upload"
+              class=" my-Upload file btn  btn-Upload"
             >
               Upload
               <input
@@ -176,8 +178,10 @@ const AddProduct = (props) => {
               style={{
                 width: "20%",
                 // marginTop: "8px",
+                backgroundColor: "#224480",
+                color: "white",
               }}
-              class=" my-Upload file btn btn-primary btn-Upload"
+              className="my-Upload file btn btn-Upload"
             >
               Upload
               <input

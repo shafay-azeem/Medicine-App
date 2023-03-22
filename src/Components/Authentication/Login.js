@@ -105,7 +105,10 @@ const Login = () => {
         />
         <div className="row d-flex justify-content-center">
           <div className="col-md-6 py-4">
-            <h1 className="mt-4 mb-4"> {t("loginHeading")}</h1>
+            <h1 className="mt-4 mb-4" style={{ color: "#212529" }}>
+              {" "}
+              {t("loginHeading")}
+            </h1>
             <div className="mb-3 text-center">
               <input type="email" placeholder={t("enterYourEmail")} />
             </div>
@@ -113,7 +116,6 @@ const Login = () => {
               <input type="password" placeholder={t("enterYourPassword")} />
             </div>
             <button className="login-button" onClick={Admin}>
-              {" "}
               {t("login")}
             </button>
           </div>

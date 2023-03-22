@@ -26,16 +26,16 @@ export default function Footer() {
             </div>
             <div className="col-md-8">
               <div className="d-flex justify-content-end flex-row flex-lg-row flex-column">
-                <p>{t("branch1")}</p>&nbsp;&nbsp;
-                <p>{t("branch2")}</p>&nbsp;&nbsp;
-                <p>{t("branch3")}</p>&nbsp;&nbsp;
-                <p>{t("branch4")}</p>&nbsp;&nbsp;
-                <p>{t("branch5")}</p>&nbsp;&nbsp;
-                <p>{t("branch6")}</p>
+                <p className="branchTitle">{t("branch1")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch2")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch3")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch4")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch5")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch6")}</p>
               </div>
             </div>
           </div>
-          <hr></hr>
+          <hr style={{ color: "#b2b7c1" }}></hr>
         </div>
 
         <div class="container">
@@ -55,7 +55,7 @@ export default function Footer() {
                 <h3 class="widget_title">{t("kenya")}</h3>
                 <div class="widget_content">
                   <ul>
-                    <li>{t("Kenya1")}</li>
+                    <li className="hoverStyle">{t("Kenya1")}</li>
                     <li>{t("kenya2")}</li>
                     <li>{t("kenya3")}</li>
                     <li>{t("kenya4")}</li>

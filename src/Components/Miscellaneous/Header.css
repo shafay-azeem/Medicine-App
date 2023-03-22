@@ -3,6 +3,7 @@
   font-weight: normal;
   font-family: sans-serif;
   margin-right: 20px;
+  color: #b2b7c1;
 }
 .navbar-nav .nav-link:hover {
   /* background-color: #fff; */
@@ -18,6 +19,18 @@
 } */
 
 #grad1 {
-  background-color: red; /* For browsers that do not support gradients */
-  background-image: linear-gradient(#a7ddf2, #a7e4f2);
+  /* background-color: red; 
+  background-image: linear-gradient(#a7ddf2, #a7e4f2); */
+  background-color: #001232;
+}
+
+.align-middle {
+  color: white;
+  cursor: pointer;
+}
+/* .align-middle:hover {
+  color: white;
+} */
+.my-select .flag-select__option--selected {
+  color: #fff;
 }
