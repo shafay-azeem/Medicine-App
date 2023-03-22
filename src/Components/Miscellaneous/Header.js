@@ -32,8 +32,6 @@ const Header = (props) => {
       i18next.changeLanguage("arb");
       helper = "YE"
       localStorage.setItem("helper", helper)
-
-
     } else {
       localStorage.getItem("helper")
       setSelected(localStorage.getItem("helper"))
@@ -141,30 +139,15 @@ const Header = (props) => {
               />
             </div>
 
-            <NavDropdown
-              title={<BsArrowRightSquare style={{ fontSize: "18px" }} />}
-              id="basic-nav-dropdown"
-            >
-              {Allow === "true" ? (
-                <NavDropdown.Item onClick={logout}>
-                  {t("LogOut")}
-                </NavDropdown.Item>
-              ) : (
-                <div>
-                  {From === "Login" ? null : (
-                    <NavDropdown.Item onClick={Login}>
-                      {t("login")}
-                    </NavDropdown.Item>
-                  )}
-
-                  {From === "SignUp" ? null : (
-                    <NavDropdown.Item onClick={SignUp}>
-                      {t("signUp")}
-                    </NavDropdown.Item>
-                  )}
-                </div>
-              )}
-            </NavDropdown>
+            {Allow === "true" ? (
+              <Nav.Link onClick={logout}>{t("LogOut")}</Nav.Link>
+            ) : (
+              <div>
+                {From === "Login" ? null : (
+                  <Nav.Link onClick={Login}> {t("login")}</Nav.Link>
+                )}
+              </div>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
