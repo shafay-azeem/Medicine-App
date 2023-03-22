@@ -2,7 +2,7 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import "../../App.css";
 import Header from "../Miscellaneous/Header";
-import AboutBanner from "./aboutUsBanner.png";
+
 import Footer from "../Miscellaneous/Footer";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";

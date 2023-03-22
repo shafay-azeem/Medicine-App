@@ -86,7 +86,7 @@ export const ViewProducts = () => {
         {/* <div class="row no-gutter flex-column mt-5">
           <img src={img.banner} class="img-fluid" />
         </div> */}
-        <Container style={{ marginTop: "4rem", marginBottom: "5rem" }}>
+        <Container style={{ marginTop: "1rem", marginBottom: "5rem" }}>
           <Row>
             {medicineList?.map((x, index) => {
               return (
@@ -112,37 +112,24 @@ export const ViewProducts = () => {
                         src={x.Image}
                       />
                       <Card.Body>
-                        <p className="text-center cartStyle">{x.Name}</p>
+                        <p
+                          className="text-center cartStyle"
+                          style={{ cursor: "pointer" }}
+                          onClick={() =>
+                            ViewDetail(x.Image, x.Price, x.Description, x.Name)
+                          }
+                        >
+                          {x.Name}
+                        </p>
 
-                        {Allow === "true" ? (
-                          <div className="d-felx justify-content-between align-items-center">
-                            <button
-                              className="ms-2 edit-Button"
-                              onClick={AddProduct}
-                            >
-                              {t("editbtn")}
-                            </button>
-                            <button className="ms-2 delete-button ">
-                              {t("deletebtn")}
-                            </button>
-                          </div>
-                        ) : (
-                          <div>
-                            <p
-                              onClick={() =>
-                                ViewDetail(
-                                  x.Image,
-                                  x.Price,
-                                  x.Description,
-                                  x.Name
-                                )
-                              }
-                              className="text-center viewDetailText"
-                            >
-                              {t("viewDetailsbtn")}
-                            </p>
-                          </div>
-                        )}
+                        <p
+                          onClick={() =>
+                            ViewDetail(x.Image, x.Price, x.Description, x.Name)
+                          }
+                          className="text-center viewDetailText"
+                        >
+                          {t("viewDetailsbtn")}
+                        </p>
                       </Card.Body>
                     </Card>
                   </div>

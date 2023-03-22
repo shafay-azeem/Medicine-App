@@ -31,10 +31,15 @@ const Login = () => {
       }).toString(),
     });
   };
+
+  let image = {
+    ProfileImage: require("./Profile.png"),
+  };
+
   return (
-    <div>
+    <>
       <Header From={"Login"}></Header>
-      <MDBContainer className="my-5">
+      {/* <MDBContainer className="my-5">
         <MDBCard className="shadow" style={{ marginTop: "5rem" }}>
           <MDBRow className="d-flex align-items-center ">
             <MDBCol md="4">
@@ -65,12 +70,7 @@ const Login = () => {
                 />
 
                 <div className="d-flex justify-content-between mx-7 mb-4 me-auto">
-                  {/* <MDBCheckbox
-                  name="flexCheck"
-                  value=""
-                  id="flexCheckDefault"
-                  label="Remember me"
-                /> */}
+                
                   <span>
                     {t("notAMember")}
                     <a href="!#" className="anchor">
@@ -94,12 +94,36 @@ const Login = () => {
             </MDBCol>
           </MDBRow>
         </MDBCard>
-      </MDBContainer>
+      </MDBContainer> */}
+
+      <div className="container text-center ">
+        <img
+          style={{ marginTop: "120px", height: "100px", width: "130px" }}
+          className="img-fluid"
+          src={image.ProfileImage}
+          alt="img"
+        />
+        <div className="row d-flex justify-content-center">
+          <div className="col-md-6 py-4">
+            <h1 className="mt-4 mb-4"> {t("loginHeading")}</h1>
+            <div className="mb-3 text-center">
+              <input type="email" placeholder={t("enterYourEmail")} />
+            </div>
+            <div className="mb-3 text-center">
+              <input type="password" placeholder={t("enterYourPassword")} />
+            </div>
+            <button className="login-button" onClick={Admin}>
+              {" "}
+              {t("login")}
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div style={{ marginTop: "5rem" }}>
         <Footer></Footer>
       </div>
-    </div>
+    </>
   );
 };
 

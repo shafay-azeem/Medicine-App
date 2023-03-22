@@ -135,9 +135,9 @@ ul li {
 
 /* ABOUT US   */
 
-.Image {
+/* .Image {
   background-image: url("./Components/Main/aboutUsBanner.png");
-}
+} */
 
 @media screen and (max-width: 900px) {
   .Main {
