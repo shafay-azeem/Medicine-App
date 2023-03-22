@@ -16,20 +16,25 @@ const Header = (props) => {
   let From = props?.From;
   let Allow = props?.Allow;
 
-  const [selected, setSelected] = useState("GB");
+  const [selected, setSelected] = useState();
 
   const { t } = useTranslation();
   // const handleClick = (e) => {
   //   i18next.changeLanguage(e.target.value);
   // };
-
+  let helper = selected
   useEffect(() => {
     if (selected === "GB") {
       i18next.changeLanguage("en");
+      helper = "GB"
+      localStorage.setItem("helper", helper)
     } else if (selected === "YE") {
       i18next.changeLanguage("arb");
+      helper = "YE"
+      localStorage.setItem("helper", helper)
     } else {
-      i18next.changeLanguage("en");
+      localStorage.getItem("helper")
+      setSelected(localStorage.getItem("helper"))
     }
   }, [selected]);
 
@@ -130,33 +135,19 @@ const Header = (props) => {
                 placeholder="Select Language"
                 countries={["GB", "YE"]}
                 customLabels={{ GB: "EN ", YE: "YE" }}
+
               />
             </div>
 
-            <NavDropdown
-              title={<BsArrowRightSquare style={{ fontSize: "18px" }} />}
-              id="basic-nav-dropdown"
-            >
-              {Allow === "true" ? (
-                <NavDropdown.Item onClick={logout}>
-                  {t("LogOut")}
-                </NavDropdown.Item>
-              ) : (
-                <div>
-                  {From === "Login" ? null : (
-                    <NavDropdown.Item onClick={Login}>
-                      {t("login")}
-                    </NavDropdown.Item>
-                  )}
-
-                  {From === "SignUp" ? null : (
-                    <NavDropdown.Item onClick={SignUp}>
-                      {t("signUp")}
-                    </NavDropdown.Item>
-                  )}
-                </div>
-              )}
-            </NavDropdown>
+            {Allow === "true" ? (
+              <Nav.Link onClick={logout}>{t("LogOut")}</Nav.Link>
+            ) : (
+              <div>
+                {From === "Login" ? null : (
+                  <Nav.Link onClick={Login}> {t("login")}</Nav.Link>
+                )}
+              </div>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
