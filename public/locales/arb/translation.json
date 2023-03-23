@@ -19,7 +19,10 @@
   "enterYourConfirmPassword": "أدخل تأكيد كلمة المرور الخاصة بك",
   "productName": "اسم المنتج",
   "description": "وصف",
-  "uploadPicture": "تحميل الصورة",
+  "category": "فئة",
+  "type": "يكتب",
+  "uploadPicture": "تحميل الصور",
+  "uploadVideo": "رفع فيديو",
   "updateBtn": "تحديث",
   "saveBtn": "يحفظ",
   "updateProductHeading": "تحديث المنتج",
@@ -112,8 +115,7 @@
   "StaticNumber": "رقم ال",
   "ProductsImportedPerYear": "المنتجات المستوردة سنويا",
   "Branches": "الفروع",
-  "Cars": "سيارات",
+  "Vehicles": "مركبات",
   "Cutsomers": "عملاء",
-
-  "OurImports": "وارداتنا"
+  "Career": "حياة مهنية"
 }

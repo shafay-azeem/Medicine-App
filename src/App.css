@@ -183,3 +183,8 @@ ul li {
   font-size: 18px;
   text-transform: capitalize;
 }
+
+.form-control:focus {
+  border-color: #001232 !important;
+  box-shadow: none !important;
+}

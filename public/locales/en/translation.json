@@ -19,7 +19,10 @@
   "enterYourConfirmPassword": "Enter Your Confirm Password",
   "productName": "Product Name",
   "description": "Description",
-  "uploadPicture": "Upload Picture",
+  "category": "Category",
+  "type": "Type",
+  "uploadPicture": "Upload Image",
+  "uploadVideo": "Upload Video",
   "updateBtn": "Update",
   "saveBtn": "Save",
   "updateProductHeading": "UPDATE PRODUCT",
@@ -111,8 +114,7 @@
 
   "ProductsImportedPerYear": "Products Imported Per Year",
   "Branches": "Branches",
-  "Cars": "Cars",
+  "Vehicles": "Vehicles",
   "Cutsomers": "Customers",
-
-  "OurImports": "Our Imports"
+  "Career": "Career"
 }

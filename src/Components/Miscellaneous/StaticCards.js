@@ -21,7 +21,7 @@ const StaticCards = () => {
       <section class="page-header">
         <div class="container">
           <div class="row no-gutter flex-column pb-3 mt-4">
-            <div class="p-title">{t("OurImports")}</div>
+            <div class="p-title">{t("Career")}</div>
           </div>
           <div class="row no-gutter flex-column">
             <img src={img.importBanner} class="img-fluid" />
@@ -36,7 +36,7 @@ const StaticCards = () => {
               <div class="row counters " style={{ backgroundColor: "#224480" }}>
                 <div class="col-sm-3">
                   <div class="inner">
-                    <span class="head">{t("StaticNumber")}</span>
+                    {/* <span class="head">{t("StaticNumber")}</span> */}
                     <div class="number">
                       +
                       <CountUp end={1000} duration={5} />
@@ -47,7 +47,7 @@ const StaticCards = () => {
 
                 <div class="col-sm-3">
                   <div class="inner">
-                    <span class="head">{t("StaticNumber")}</span>
+                    {/* <span class="head">{t("StaticNumber")}</span> */}
                     <div class="number">
                       +
                       <CountUp end={50} duration={5} />
@@ -58,18 +58,18 @@ const StaticCards = () => {
 
                 <div class="col-sm-3">
                   <div class="inner">
-                    <span class="head">{t("StaticNumber")}</span>
+                    {/* <span class="head">{t("StaticNumber")}</span> */}
                     <div class="number">
                       +
                       <CountUp end={100} duration={5} />
                     </div>
-                    <p>{t("Cars")}</p>
+                    <p>{t("Vehicles")}</p>
                   </div>
                 </div>
 
                 <div class="col-sm-3">
                   <div class="inner">
-                    <span class="head">{t("StaticNumber")}</span>
+                    {/* <span class="head">{t("StaticNumber")}</span> */}
                     <div class="number">
                       +
                       <CountUp end={500} duration={5} />
