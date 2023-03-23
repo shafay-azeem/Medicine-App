@@ -3,11 +3,11 @@
   font-weight: normal;
   font-family: sans-serif;
   margin-right: 20px;
-  color: #b2b7c1;
+  color: #b2b7c1 !important;
 }
 .navbar-nav .nav-link:hover {
   /* background-color: #fff; */
-  color: white;
+  color: white !important;
 }
 .anchor {
   color: var(--bs-link-color);
