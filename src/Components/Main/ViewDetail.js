@@ -11,6 +11,7 @@ const ViewDetail = () => {
   let price = searchparams.get("price");
   let description = searchparams.get("description");
   let name = searchparams.get("name");
+  let Allow = searchparams.get("Allow");
   return (
     <>
       <Header From={"Home"}></Header>
@@ -60,14 +61,16 @@ const ViewDetail = () => {
                       </tbody>
                     </table>
 
-                    <div class="d-flex">
-                      <div className="btnStyling me-3">
-                        <a className="btnTextStyling">Edit</a>
+                    {Allow === "true" ? (
+                      <div class="d-flex">
+                        <div className="btnStyling me-3">
+                          <a className="btnTextStyling">Edit</a>
+                        </div>
+                        <div className="btnStyling">
+                          <a className="btnTextStyling">Delete</a>
+                        </div>
                       </div>
-                      <div className="btnStyling">
-                        <a className="btnTextStyling">Delete</a>
-                      </div>
-                    </div>
+                    ) : null}
                   </div>
                 </div>
               </div>

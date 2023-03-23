@@ -56,6 +56,19 @@ export const ViewProducts = () => {
     });
   };
 
+  const ViewDetailAdmin = (img, price, description, name) => {
+    navigate({
+      pathname: "/viewdetail",
+      search: createSearchParams({
+        img,
+        price,
+        description,
+        name,
+        Allow,
+      }).toString(),
+    });
+  };
+
   const ViewDetail = (img, price, description, name) => {
     navigate({
       pathname: "/viewdetail",
@@ -122,14 +135,35 @@ export const ViewProducts = () => {
                           {x.Name}
                         </p>
 
-                        <p
-                          onClick={() =>
-                            ViewDetail(x.Image, x.Price, x.Description, x.Name)
-                          }
-                          className="text-center viewDetailText"
-                        >
-                          {t("viewDetailsbtn")}
-                        </p>
+                        {Allow === "true" ? (
+                          <p
+                            onClick={() =>
+                              ViewDetailAdmin(
+                                x.Image,
+                                x.Price,
+                                x.Description,
+                                x.Name
+                              )
+                            }
+                            className="text-center viewDetailText"
+                          >
+                            {t("viewDetailsbtn")}
+                          </p>
+                        ) : (
+                          <p
+                            onClick={() =>
+                              ViewDetail(
+                                x.Image,
+                                x.Price,
+                                x.Description,
+                                x.Name
+                              )
+                            }
+                            className="text-center viewDetailText"
+                          >
+                            {t("viewDetailsbtn")}
+                          </p>
+                        )}
                       </Card.Body>
                     </Card>
                   </div>

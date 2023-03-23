@@ -121,12 +121,15 @@ const Header = (props) => {
             {Allow === "true" ? null : (
               <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
             )}
+
             {Allow === "true" ? null : (
               <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
             )}
+
             {Allow === "true" ? (
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
             ) : null}
+
             {/* {Allow ? <Nav.Link >Update Product</Nav.Link> : null} */}
 
             <div className="d-flex align-items-center me-2">
