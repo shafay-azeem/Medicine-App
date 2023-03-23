@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   createSearchParams,
   useNavigate,
@@ -10,6 +10,8 @@ import "./ViewProducts.css";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import Footer from "../Miscellaneous/Footer";
+import apiFunctions from "../../global/GlobalFunction";
+import { API_URL, BASE_URL } from "../../global/Constant";
 
 export const ViewProducts = () => {
   let img = {
@@ -20,46 +22,30 @@ export const ViewProducts = () => {
   const [searchparams] = useSearchParams();
   let token = localStorage.getItem("token");
   const navigate = useNavigate();
-  const [medicineList, setMedicineList] = useState([
-    {
-      Name: "Cefaclor",
-      Description:
-        "Cefaclor is used to treat certain infections caused by bacteria",
-      Price: "150",
-      Image:
-        "https://bosch-pharma.com/wp-content/uploads/2022/11/cefalor-500mg-capsules.jpg",
-    },
-    {
-      Name: "Aram",
-      Description:
-        "Aram Tablet is a pain-relieving medicine. It is used to reduce pain and inflammation in conditions like rheumatoid arthritis, ankylosing spondylitis, and osteoarthritis.",
-      Price: "220",
-      Image:
-        "https://bosch-pharma.com/wp-content/uploads/2022/11/aaram-50mg-capsules.jpg",
-    },
-    {
-      Name: "Nuzib",
-      Description:
-        "Nuzib Capsule is a prescription medicine that is used to relieve the condition of inflammation of joints due to degeneration of cartilage tissue",
-      Price: "300",
-      Image:
-        "https://bosch-pharma.com/wp-content/uploads/2022/11/nuzib-100mg-capsules.jpg",
-    },
-  ]);
+  const [medicineList, setMedicineList] = useState();
 
-  const ViewDetail = (img, price, description, name) => {
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
+  const ViewDetail = (id) => {
     navigate({
       pathname: "/viewdetail",
       search: createSearchParams({
-        img,
-        price,
-        description,
-        name,
+        id,
       }).toString(),
     });
   };
 
+  async function getAllProducts() {
+    let getAllProducts = await apiFunctions.GET_REQUEST(
+      BASE_URL + API_URL.GET_ALL_PRODUCTS
+    );
+    let res = getAllProducts.data.products;
+    setMedicineList(res);
 
+    return;
+  }
 
   return (
     <>
@@ -84,7 +70,10 @@ export const ViewProducts = () => {
             {medicineList?.map((x, index) => {
               return (
                 <>
-                  <div className=" col-lg-4 d-flex justify-content-center align-items-center">
+                  <div
+                    className=" col-lg-4 d-flex justify-content-center align-items-center"
+                    key={index}
+                  >
                     <Card
                       className="border  col-md-4 mb-4 mt-4"
                       style={{
@@ -102,34 +91,23 @@ export const ViewProducts = () => {
                           alignSelf: "center",
                         }}
                         variant="top"
-                        src={x.Image}
+                        src={x.productImg}
                       />
                       <Card.Body>
                         <p
                           className="text-center cartStyle"
                           style={{ cursor: "pointer" }}
-                          onClick={() =>
-                            ViewDetail(x.Image, x.Price, x.Description, x.Name)
-                          }
+                          onClick={() => ViewDetail(x._id)}
                         >
-                          {x.Name}
+                          {x.productName}
                         </p>
 
-
                         <p
-                          onClick={() =>
-                            ViewDetail(
-                              x.Image,
-                              x.Price,
-                              x.Description,
-                              x.Name
-                            )
-                          }
+                          onClick={() => ViewDetail(x._id)}
                           className="text-center viewDetailText"
                         >
                           {t("viewDetailsbtn")}
                         </p>
-
                       </Card.Body>
                     </Card>
                   </div>

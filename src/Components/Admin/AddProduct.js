@@ -18,16 +18,103 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import Footer from "../Miscellaneous/Footer";
 import Card from "react-bootstrap/Card";
+import apiFunctions from "../../global/GlobalFunction";
+import { API_URL, BASE_URL } from "../../global/Constant";
 
 const AddProduct = (props) => {
   const [video, setVideo] = useState();
   const [searchparams] = useSearchParams();
   const [image, setImage] = useState();
+
+  const [productName, setProductName] = useState();
+  const [productDescription, setProductDescription] = useState();
+  const [productCategory, setProductCategory] = useState();
+  const [productType, setProductType] = useState();
+  const [product, setProduct] = useState();
+
   const { t } = useTranslation();
   const navigate = useNavigate();
   let Edit = searchparams.get("Edit");
+  let token = localStorage.getItem("token");
+  let productId = searchparams.get("productId");
 
-  let token = localStorage.getItem('token')
+  useEffect(() => {
+    if (Edit === "true") {
+      getSingleProduct();
+    }
+    return;
+  }, []);
+
+  async function getSingleProduct() {
+    let getSingleProduct = await apiFunctions.GET_REQUEST(
+      BASE_URL + API_URL.GET_SINGLE_PRODUCT + productId
+    );
+    let res = getSingleProduct.data.product;
+    setProduct(res);
+    setProductName(res?.productName);
+    setProductDescription(res?.productDescription);
+    setProductCategory(res?.productCategory);
+    setProductType(res?.productType);
+    setVideo(res?.productVideo);
+    setImage(res?.productImg);
+    return;
+  }
+
+  const createProduct = async () => {
+    if (
+      !productName ||
+      !productDescription ||
+      !productCategory ||
+      !productType
+    ) {
+      alert("Please Enter All Fields");
+      return;
+    }
+
+    try {
+      let data = {
+        productName: productName,
+        productDescription: productDescription,
+        productCategory: productCategory,
+        productType: productType,
+        productImg: image,
+        productVideo: video,
+      };
+
+      console.log(data);
+      await apiFunctions
+        .POST_REQUEST(BASE_URL + API_URL.CREATE_PRODUCT, data)
+        .then((res) => {
+          console.log(res, "res");
+          if (res.status == 201) {
+            alert(`${res.data.message}`);
+            // toast({
+            //   position: "top",
+            //   title: `${res.data.message}`,
+            //   status: "success",
+            //   duration: 1000,
+            //   isClosable: true,
+            // });
+            navigate({
+              pathname: "/",
+            });
+            return true;
+          } else {
+            alert(`There Some Error`);
+            return false;
+          }
+        });
+    } catch (err) {
+      console.log(err);
+      // toast({
+      //   position: "top",
+      //   title: `There Some Error`,
+      //   status: "error",
+      //   duration: 1000,
+      //   isClosable: true,
+      // });
+    }
+  };
 
   let img = {
     uploadImg: require("../Main/image.png"),
@@ -87,19 +174,52 @@ const AddProduct = (props) => {
       });
     }
   });
+
+  const updateProduct = async () => {
+    try {
+      let data = {
+        productName: productName,
+        productDescription: productDescription,
+        productCategory: productCategory,
+        productType: productType,
+        productImg: image,
+        productVideo: video,
+      };
+
+      await apiFunctions
+        .PUT_REQUEST(BASE_URL + API_URL.UPDATE_PRODUCT + productId, data)
+        .then((res) => {
+          if (res.data.success == true) {
+            alert(`${res.data.message}`);
+            // toast({
+            //   position: "top",
+            //   title: `Updated SuccessFully`,
+            //   status: "success",
+            //   duration: 1000,
+            //   isClosable: true,
+            // });
+
+            navigate("/");
+
+            return true;
+          } else {
+            alert(`There Some Error---`);
+            return false;
+          }
+        });
+    } catch (err) {
+      alert(err);
+    }
+  };
   return (
     <>
       <Header></Header>
 
       <div className="container" style={{ marginTop: "8rem" }}>
         {Edit === "true" ? (
-
           <h2 class="section-title"> {t("updateProductHeading")}</h2>
-
         ) : (
-
           <h2 class="section-title"> {t("createProductHeading")}</h2>
-
         )}
         <div className="row ">
           <div
@@ -113,7 +233,8 @@ const AddProduct = (props) => {
                   type="text"
                   rows={3}
                   placeholder={t("productName")}
-
+                  onChange={(e) => setProductName(e.target.value)}
+                  value={productName}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -122,20 +243,57 @@ const AddProduct = (props) => {
                   as="textarea"
                   rows={3}
                   placeholder={t("description")}
+                  onChange={(e) => setProductDescription(e.target.value)}
+                  value={productDescription}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>{t("category")}
-                </Form.Label>
-                <Form.Control type="text" placeholder={t("category")} />
+                <Form.Label>{t("category")}</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder={t("category")}
+                  onChange={(e) => setProductCategory(e.target.value)}
+                  value={productCategory}
+                />
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label>{t("type")}</Form.Label>
-                <Form.Control type="text" placeholder={t(" type")} />
+                <Form.Control
+                  type="text"
+                  placeholder={t(" type")}
+                  onChange={(e) => setProductType(e.target.value)}
+                  value={productType}
+                />
               </Form.Group>
             </Form>
+
+            {Edit === "true" ? (
+              <Button
+                className="mt-1"
+                style={{
+                  backgroundColor: "#224480",
+                  border: "none",
+                  color: "white",
+                }}
+                onClick={updateProduct}
+              >
+                {t("updateBtn")}
+              </Button>
+            ) : (
+              <Button
+                className="mt-1"
+                style={{
+                  backgroundColor: "#224480",
+                  border: "none",
+                  color: "white",
+                }}
+                onClick={createProduct}
+              >
+                {t("saveBtn")}
+              </Button>
+            )}
           </div>
           <div className="col-md-6 col-sm-12 d-flex flex-column align-items-center ">
             <section className="imgCard">

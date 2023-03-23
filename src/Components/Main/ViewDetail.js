@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   createSearchParams,
   useNavigate,
@@ -8,26 +8,71 @@ import Footer from "../Miscellaneous/Footer";
 import Header from "../Miscellaneous/Header";
 import "./ViewDetail.css";
 import { useTranslation } from "react-i18next";
+import apiFunctions from "../../global/GlobalFunction";
+import { API_URL, BASE_URL } from "../../global/Constant";
 
 const ViewDetail = () => {
   const [searchparams] = useSearchParams();
   const navigate = useNavigate();
-  let img = searchparams.get("img");
-  let price = searchparams.get("price");
-  let description = searchparams.get("description");
-  let name = searchparams.get("name");
+  let productId = searchparams.get("id");
   let token = localStorage.getItem("token");
+
+  const [product, setProduct] = useState();
+
   const { t } = useTranslation();
-  const EditProduct = (img, price, description, name) => {
-    console.log("_+_+_");
+  const EditProduct = () => {
     let Edit = true;
     navigate({
       pathname: "/addproduct",
       search: createSearchParams({
         Edit,
+        productId,
       }).toString(),
     });
   };
+
+  useEffect(() => {
+    getSingleProduct();
+  }, []);
+
+  async function getSingleProduct() {
+    let getSingleProduct = await apiFunctions.GET_REQUEST(
+      BASE_URL + API_URL.GET_SINGLE_PRODUCT + productId
+    );
+    let res = getSingleProduct.data.product;
+    setProduct(res);
+    return;
+  }
+
+  const deleteProduct = async () => {
+    await apiFunctions
+      .DELETE_REQUEST(BASE_URL + API_URL.DELETE_PRODUCT + productId)
+      .then((res) => {
+        if (res.data.success == true) {
+          // toast({
+          //   position: "top",
+          //   title: `${res.data.message}`,
+          //   status: "success",
+          //   duration: 1000,
+          //   isClosable: true,
+          // });
+          navigate({
+            pathname: "/",
+          });
+          return true;
+        } else {
+          // toast({
+          //   position: "top",
+          //   title: `There Some Error`,
+          //   status: "error",
+          //   duration: 1000,
+          //   isClosable: true,
+          // });
+          return false;
+        }
+      });
+  };
+
   return (
     <>
       <Header></Header>
@@ -42,33 +87,49 @@ const ViewDetail = () => {
                 <div className="col-md-6">
                   <div className="images p-3">
                     <div className="text-center p-4">
-                      <img id="main-image" src={img} width="250" />
+                      {product?.productVideo ? (
+                        <video width="250" height="250" controls>
+                          <source
+                            src={product?.productVideo}
+                            type="video/mp4"
+                          ></source>
+                        </video>
+                      ) : (
+                        <img
+                          id="main-image"
+                          src={product?.productImg}
+                          width="250"
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
+
                 <div className="col-md-6">
                   <div className="product p-4">
                     <div className="mt-4 mb-3">
                       <span className="text-uppercase text-blue brand">
                         Tag
                       </span>
-                      <h5 className="text-uppercase productName">{name}</h5>
+                      <h5 className="text-uppercase productName">
+                        {product?.productName}
+                      </h5>
                       <div className="price d-flex flex-row align-items-center">
                         {/* <div className="ml-2 priceStyle">
                           <span>Rs {price}</span>
                         </div> */}
                       </div>
                     </div>
-                    <p className="about">{description}</p>
+                    <p className="about">{product?.productDescription}</p>
                     <table class="table table-bordered">
                       <tbody>
                         <tr>
                           <th>Category</th>
-                          <td>&nbsp;antibiotic</td>
+                          <td>&nbsp;{product?.productCategory}</td>
                         </tr>
                         <tr>
                           <th>Type</th>
-                          <td>&nbsp;capsule</td>
+                          <td>&nbsp;{product?.productType}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -81,7 +142,9 @@ const ViewDetail = () => {
                           </a>
                         </div>
                         <div className="btnStyling">
-                          <a className="btnTextStyling">{t("deletebtn")}</a>
+                          <a className="btnTextStyling" onClick={deleteProduct}>
+                            {t("deletebtn")}
+                          </a>
                         </div>
                       </div>
                     ) : null}
