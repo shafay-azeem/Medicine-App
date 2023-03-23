@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MDBBtn,
   MDBContainer,
@@ -12,7 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import "../Authentication/Authentication.css";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "../Miscellaneous/Header";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
@@ -24,8 +24,10 @@ const AddProduct = (props) => {
   const [searchparams] = useSearchParams();
   const [image, setImage] = useState();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   let Edit = searchparams.get("Edit");
 
+  let token = localStorage.getItem('token')
 
   let img = {
     uploadImg: require("../Main/image.png"),
@@ -77,6 +79,14 @@ const AddProduct = (props) => {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    if (!token) {
+      navigate({
+        pathname: "/",
+      });
+    }
+  });
   return (
     <>
       <Header></Header>
