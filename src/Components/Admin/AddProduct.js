@@ -270,31 +270,38 @@ const AddProduct = (props) => {
             </Form>
 
             {Edit === "true" ? (
-              <Button
-                className="mt-1"
-                style={{
-                  backgroundColor: "#224480",
-                  border: "none",
-                  color: "white",
-                }}
-                onClick={updateProduct}
-              >
-                {t("updateBtn")}
-              </Button>
+              <div className="text-center">
+                <Button
+                  className="mt-1"
+                  style={{
+                    backgroundColor: "#224480",
+                    border: "none",
+                    color: "white",
+                    width: "35%",
+                  }}
+                  onClick={updateProduct}
+                >
+                  {t("updateBtn")}
+                </Button>
+              </div>
             ) : (
-              <Button
-                className="mt-1"
-                style={{
-                  backgroundColor: "#224480",
-                  border: "none",
-                  color: "white",
-                }}
-                onClick={createProduct}
-              >
-                {t("saveBtn")}
-              </Button>
+              <div className="text-center">
+                <Button
+                  className="mt-1"
+                  style={{
+                    backgroundColor: "#224480",
+                    border: "none",
+                    color: "white",
+                    width: "35%",
+                  }}
+                  onClick={createProduct}
+                >
+                  {t("saveBtn")}
+                </Button>
+              </div>
             )}
           </div>
+
           <div className="col-md-6 col-sm-12 d-flex flex-column align-items-center ">
             <section className="imgCard">
               {image ? (
@@ -318,7 +325,7 @@ const AddProduct = (props) => {
 
             <div
               style={{
-                width: "20%",
+                width: "35%",
                 marginTop: "12px",
                 backgroundColor: "#224480",
                 color: "white",
@@ -356,7 +363,7 @@ const AddProduct = (props) => {
 
             <div
               style={{
-                width: "20%",
+                width: "35%",
                 // marginTop: "8px",
                 backgroundColor: "#224480",
                 color: "white",

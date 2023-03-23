@@ -84,10 +84,10 @@ export const ViewProducts = () => {
                     >
                       <Card.Img
                         style={{
-                          width: "80%",
+                          width: "auto",
                           maxWidth: "100%",
-                          height: "50%",
-                          // padding: "30px",
+                          height: "250px",
+                          padding: "30px",
                           alignSelf: "center",
                         }}
                         variant="top"

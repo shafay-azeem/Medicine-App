@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBRow,
-  MDBCol,
-  MDBInput,
-} from "mdb-react-ui-kit";
 import "../Authentication/Authentication.css";
-import MedicineBanner from "../Authentication/MedicineBanner.png";
 import Header from "../Miscellaneous/Header";
-import { Button } from "react-bootstrap";
 import { useNavigate, createSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
+
 import Footer from "../Miscellaneous/Footer";
 import apiFunctions from "../../global/GlobalFunction";
 import { API_URL, BASE_URL } from "../../global/Constant";
@@ -24,6 +12,7 @@ const Login = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const navigate = useNavigate();
 
@@ -45,8 +34,6 @@ const Login = () => {
       await apiFunctions
         .POST_REQUEST(BASE_URL + API_URL.LOGIN, userData)
         .then((res) => {
-          console.log(res, "res login");
-
           if (res.data.success == true) {
             alert(`${res.data.message}`);
             setEmail("");
