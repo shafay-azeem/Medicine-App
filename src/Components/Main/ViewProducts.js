@@ -18,8 +18,7 @@ export const ViewProducts = () => {
 
   const { t } = useTranslation();
   const [searchparams] = useSearchParams();
-  let Allow = searchparams.get("Allow");
-  let Edit = true;
+  let token = localStorage.getItem("token");
   const navigate = useNavigate();
   const [medicineList, setMedicineList] = useState([
     {
@@ -47,27 +46,6 @@ export const ViewProducts = () => {
         "https://bosch-pharma.com/wp-content/uploads/2022/11/nuzib-100mg-capsules.jpg",
     },
   ]);
-  const AddProduct = () => {
-    navigate({
-      pathname: "/addproduct",
-      search: createSearchParams({
-        Edit,
-      }).toString(),
-    });
-  };
-
-  const ViewDetailAdmin = (img, price, description, name) => {
-    navigate({
-      pathname: "/viewdetail",
-      search: createSearchParams({
-        img,
-        price,
-        description,
-        name,
-        Allow,
-      }).toString(),
-    });
-  };
 
   const ViewDetail = (img, price, description, name) => {
     navigate({
@@ -81,10 +59,12 @@ export const ViewProducts = () => {
     });
   };
 
+
+
   return (
     <>
       <div className="container">
-        <Header From={"Home"} Allow={Allow}></Header>
+        <Header></Header>
 
         <div className="row no-gutter flex-column">
           <div
@@ -135,35 +115,21 @@ export const ViewProducts = () => {
                           {x.Name}
                         </p>
 
-                        {Allow === "true" ? (
-                          <p
-                            onClick={() =>
-                              ViewDetailAdmin(
-                                x.Image,
-                                x.Price,
-                                x.Description,
-                                x.Name
-                              )
-                            }
-                            className="text-center viewDetailText"
-                          >
-                            {t("viewDetailsbtn")}
-                          </p>
-                        ) : (
-                          <p
-                            onClick={() =>
-                              ViewDetail(
-                                x.Image,
-                                x.Price,
-                                x.Description,
-                                x.Name
-                              )
-                            }
-                            className="text-center viewDetailText"
-                          >
-                            {t("viewDetailsbtn")}
-                          </p>
-                        )}
+
+                        <p
+                          onClick={() =>
+                            ViewDetail(
+                              x.Image,
+                              x.Price,
+                              x.Description,
+                              x.Name
+                            )
+                          }
+                          className="text-center viewDetailText"
+                        >
+                          {t("viewDetailsbtn")}
+                        </p>
+
                       </Card.Body>
                     </Card>
                   </div>

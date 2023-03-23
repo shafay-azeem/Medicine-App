@@ -13,15 +13,14 @@ import ReactFlagsSelect from "react-flags-select";
 
 import LanguageOption from "../LanguageOption";
 const Header = (props) => {
-  let From = props?.From;
-  let Allow = props?.Allow;
+
+
+  let token = localStorage.getItem("token");
 
   const [selected, setSelected] = useState();
 
   const { t } = useTranslation();
-  // const handleClick = (e) => {
-  //   i18next.changeLanguage(e.target.value);
-  // };
+
   let helper = selected;
   useEffect(() => {
     if (selected === "GB") {
@@ -46,6 +45,7 @@ const Header = (props) => {
   };
 
   const logout = () => {
+    localStorage.removeItem("token");
     navigate({
       pathname: "/",
     });
@@ -83,9 +83,6 @@ const Header = (props) => {
   const Home = () => {
     navigate({
       pathname: "/",
-      search: createSearchParams({
-        Allow,
-      }).toString(),
     });
   };
 
@@ -115,18 +112,18 @@ const Header = (props) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
-            {Allow === "true" ? null : (
-              <Nav.Link onClick={staticCard}>{t("imports")}</Nav.Link>
-            )}
-            {Allow === "true" ? null : (
-              <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
-            )}
 
-            {Allow === "true" ? null : (
-              <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
-            )}
+            <Nav.Link onClick={staticCard}>{t("imports")}</Nav.Link>
 
-            {Allow === "true" ? (
+
+            <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
+
+
+
+            <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
+
+
+            {token ? (
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
             ) : null}
 
@@ -143,14 +140,13 @@ const Header = (props) => {
               />
             </div>
 
-            {Allow === "true" ? (
+            {token ? (
               <Nav.Link onClick={logout}>{t("LogOut")}</Nav.Link>
             ) : (
-              <div>
-                {From === "Login" ? null : (
-                  <Nav.Link onClick={Login}> {t("login")}</Nav.Link>
-                )}
-              </div>
+
+
+              <Nav.Link onClick={Login}> {t("login")}</Nav.Link>
+
             )}
           </Nav>
         </Navbar.Collapse>
