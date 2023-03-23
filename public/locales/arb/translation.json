@@ -1,7 +1,7 @@
 {
   "loginHeading": "نموذج تسجيل الدخول",
   "signUpHeading": "التسجيل من",
-  "home": "بيت",
+  "home": "الصفحة الرئيسية",
   "aboutus": "معلومات عنا",
   "addProduct": "أضف منتج",
   "LogOut": "تسجيل خروج",
@@ -113,7 +113,7 @@
   "imports": "الواردات",
 
   "StaticNumber": "رقم ال",
-  "ProductsImportedPerYear": "المنتجات المستوردة سنويا",
+  "importedProducts": "المنتجات المستوردة",
   "Branches": "الفروع",
   "Vehicles": "مركبات",
   "Cutsomers": "عملاء",

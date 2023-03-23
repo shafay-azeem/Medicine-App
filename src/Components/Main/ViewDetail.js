@@ -7,6 +7,7 @@ import {
 import Footer from "../Miscellaneous/Footer";
 import Header from "../Miscellaneous/Header";
 import "./ViewDetail.css";
+import { useTranslation } from "react-i18next";
 
 const ViewDetail = () => {
   const [searchparams] = useSearchParams();
@@ -15,17 +16,16 @@ const ViewDetail = () => {
   let price = searchparams.get("price");
   let description = searchparams.get("description");
   let name = searchparams.get("name");
-  let token = localStorage.getItem('token')
-
-
+  let token = localStorage.getItem("token");
+  const { t } = useTranslation();
   const EditProduct = (img, price, description, name) => {
-    console.log("_+_+_")
-    let Edit = true
+    console.log("_+_+_");
+    let Edit = true;
     navigate({
       pathname: "/addproduct",
       search: createSearchParams({
-        Edit
-      }).toString()
+        Edit,
+      }).toString(),
     });
   };
   return (
@@ -70,20 +70,18 @@ const ViewDetail = () => {
                           <th>Type</th>
                           <td>&nbsp;capsule</td>
                         </tr>
-                        <tr>
-                          <th>&nbsp;Milligram</th>
-                          <td>&nbsp;500mg</td>
-                        </tr>
                       </tbody>
                     </table>
 
                     {token ? (
                       <div class="d-flex">
                         <div className="btnStyling me-3">
-                          <a className="btnTextStyling" onClick={EditProduct}>Edit</a>
+                          <a className="btnTextStyling" onClick={EditProduct}>
+                            {t("editbtn")}
+                          </a>
                         </div>
                         <div className="btnStyling">
-                          <a className="btnTextStyling">Delete</a>
+                          <a className="btnTextStyling">{t("deletebtn")}</a>
                         </div>
                       </div>
                     ) : null}

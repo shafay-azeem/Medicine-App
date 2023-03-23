@@ -13,8 +13,6 @@ import ReactFlagsSelect from "react-flags-select";
 
 import LanguageOption from "../LanguageOption";
 const Header = (props) => {
-
-
   let token = localStorage.getItem("token");
 
   const [selected, setSelected] = useState();
@@ -76,7 +74,7 @@ const Header = (props) => {
 
   const staticCard = () => {
     navigate({
-      pathname: "/staticCards",
+      pathname: "/career",
     });
   };
 
@@ -113,15 +111,11 @@ const Header = (props) => {
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
 
-            <Nav.Link onClick={staticCard}>{t("imports")}</Nav.Link>
-
+            <Nav.Link onClick={staticCard}>{t("Career")}</Nav.Link>
 
             <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
 
-
-
             <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
-
 
             {token ? (
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
@@ -143,10 +137,7 @@ const Header = (props) => {
             {token ? (
               <Nav.Link onClick={logout}>{t("LogOut")}</Nav.Link>
             ) : (
-
-
               <Nav.Link onClick={Login}> {t("login")}</Nav.Link>
-
             )}
           </Nav>
         </Navbar.Collapse>

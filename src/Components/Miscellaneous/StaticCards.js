@@ -36,45 +36,42 @@ const StaticCards = () => {
               <div class="row counters " style={{ backgroundColor: "#224480" }}>
                 <div class="col-sm-3">
                   <div class="inner">
-                    {/* <span class="head">{t("StaticNumber")}</span> */}
+                    <span class="head">{t("importedProducts")}</span>
                     <div class="number">
                       +
                       <CountUp end={1000} duration={5} />
                     </div>
-                    <p>{t("ProductsImportedPerYear")}</p>
                   </div>
                 </div>
 
                 <div class="col-sm-3">
                   <div class="inner">
-                    {/* <span class="head">{t("StaticNumber")}</span> */}
+                    <span class="head">{t("Branches")}</span>
                     <div class="number">
                       +
                       <CountUp end={50} duration={5} />
                     </div>
-                    <p>{t("Branches")}</p>
                   </div>
                 </div>
 
                 <div class="col-sm-3">
                   <div class="inner">
-                    {/* <span class="head">{t("StaticNumber")}</span> */}
+                    <span class="head">{t("Vehicles")}</span>
                     <div class="number">
                       +
                       <CountUp end={100} duration={5} />
                     </div>
-                    <p>{t("Vehicles")}</p>
                   </div>
                 </div>
 
                 <div class="col-sm-3">
                   <div class="inner">
-                    {/* <span class="head">{t("StaticNumber")}</span> */}
+                    <span class="head">{t("Cutsomers")}</span>
                     <div class="number">
                       +
                       <CountUp end={500} duration={5} />
                     </div>
-                    <p>{t("Cutsomers")}</p>
+                    {/* <p>{t("Cutsomers")}</p> */}
                   </div>
                 </div>
               </div>
