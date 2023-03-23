@@ -1,20 +1,36 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import {
+  createSearchParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import Footer from "../Miscellaneous/Footer";
 import Header from "../Miscellaneous/Header";
 import "./ViewDetail.css";
 
 const ViewDetail = () => {
   const [searchparams] = useSearchParams();
-
+  const navigate = useNavigate();
   let img = searchparams.get("img");
   let price = searchparams.get("price");
   let description = searchparams.get("description");
   let name = searchparams.get("name");
-  let Allow = searchparams.get("Allow");
+  let token = localStorage.getItem('token')
+
+
+  const EditProduct = (img, price, description, name) => {
+    console.log("_+_+_")
+    let Edit = true
+    navigate({
+      pathname: "/addproduct",
+      search: createSearchParams({
+        Edit
+      }).toString()
+    });
+  };
   return (
     <>
-      <Header From={"Home"}></Header>
+      <Header></Header>
       <div className="container mb-5" dir="ltr">
         <div
           className="row d-flex justify-content-center"
@@ -61,10 +77,10 @@ const ViewDetail = () => {
                       </tbody>
                     </table>
 
-                    {Allow === "true" ? (
+                    {token ? (
                       <div class="d-flex">
                         <div className="btnStyling me-3">
-                          <a className="btnTextStyling">Edit</a>
+                          <a className="btnTextStyling" onClick={EditProduct}>Edit</a>
                         </div>
                         <div className="btnStyling">
                           <a className="btnTextStyling">Delete</a>

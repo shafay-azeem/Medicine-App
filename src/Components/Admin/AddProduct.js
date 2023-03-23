@@ -26,6 +26,7 @@ const AddProduct = (props) => {
   const { t } = useTranslation();
   let Edit = searchparams.get("Edit");
 
+
   let img = {
     uploadImg: require("../Main/image.png"),
   };
@@ -78,9 +79,18 @@ const AddProduct = (props) => {
   };
   return (
     <>
-      <Header From={"Home"} Allow="true"></Header>
+      <Header></Header>
 
       <div className="container" style={{ marginTop: "8rem" }}>
+        {Edit === "true" ? (
+
+          <h2 class="section-title"> {t("updateProductHeading")}</h2>
+
+        ) : (
+
+          <h2 class="section-title"> {t("createProductHeading")}</h2>
+
+        )}
         <div className="row ">
           <div
             // style={{ marginTop: "35px" }}
@@ -93,6 +103,7 @@ const AddProduct = (props) => {
                   type="text"
                   rows={3}
                   placeholder={t("productName")}
+
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -105,13 +116,14 @@ const AddProduct = (props) => {
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Category</Form.Label>
-                <Form.Control type="text" placeholder="Category" />
+                <Form.Label>{t("category")}
+                </Form.Label>
+                <Form.Control type="text" placeholder={t("category")} />
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Type</Form.Label>
-                <Form.Control type="text" placeholder="Type" />
+                <Form.Label>{t("type")}</Form.Label>
+                <Form.Control type="text" placeholder={t(" type")} />
               </Form.Group>
             </Form>
           </div>
@@ -145,7 +157,7 @@ const AddProduct = (props) => {
               }}
               class=" my-Upload file btn  btn-Upload"
             >
-              Upload
+              {t("uploadPicture")}
               <input
                 className=""
                 style={{
@@ -183,7 +195,7 @@ const AddProduct = (props) => {
               }}
               className="my-Upload file btn btn-Upload"
             >
-              Upload
+              {t("uploadVideo")}
               <input
                 className=""
                 style={{

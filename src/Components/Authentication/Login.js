@@ -21,7 +21,7 @@ import apiFunctions from "../../global/GlobalFunction";
 import { API_URL, BASE_URL } from "../../global/Constant";
 
 const Login = () => {
-  let Allow = true;
+
   const { t } = useTranslation();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -58,7 +58,6 @@ const Login = () => {
             navigate({
               pathname: "/",
               search: createSearchParams({
-                Allow,
               }).toString(),
             });
 
