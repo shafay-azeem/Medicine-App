@@ -5,10 +5,12 @@
   margin-right: 20px;
   color: #b2b7c1 !important;
 }
+
 .navbar-nav .nav-link:hover {
   /* background-color: #fff; */
   color: white !important;
 }
+
 .anchor {
   color: var(--bs-link-color);
   text-decoration: none;
@@ -28,9 +30,14 @@
   color: white;
   cursor: pointer;
 }
+
 /* .align-middle:hover {
   color: white;
 } */
 .my-select .flag-select__option--selected {
   color: #fff;
+}
+
+.navbar-toggler-icon {
+  background-image: url('./menuIconWhite.png') !important;
 }
