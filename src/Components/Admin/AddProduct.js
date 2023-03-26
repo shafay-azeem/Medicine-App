@@ -41,9 +41,15 @@ const AddProduct = (props) => {
   useEffect(() => {
     if (Edit === "true") {
       getSingleProduct();
+    } else {
+      setProductName("");
+      setProductDescription("");
+      setProductCategory("");
+      setProductType("");
+      setImage("");
+      setVideo("");
     }
-    return;
-  }, []);
+  }, [Edit]);
 
   async function getSingleProduct() {
     let getSingleProduct = await apiFunctions.GET_REQUEST(
