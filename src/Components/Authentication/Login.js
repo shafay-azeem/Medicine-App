@@ -7,12 +7,16 @@ import { useTranslation } from "react-i18next";
 import Footer from "../Miscellaneous/Footer";
 import apiFunctions from "../../global/GlobalFunction";
 import { API_URL, BASE_URL } from "../../global/Constant";
+import { Button } from "react-bootstrap";
 
 const Login = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
 
   const navigate = useNavigate();
 
@@ -81,11 +85,17 @@ const Login = () => {
             </div>
             <div className="mb-3 text-center">
               <input
-                type="password"
+                // type="password"
+                type={show ? "text" : "password"}
                 placeholder={t("enterYourPassword")}
                 onChange={(e) => setPassword(e.target.value)}
               />
+
+              <Button h="1.75rem" size="sm" onClick={handleClick}>
+                {show ? "Hide" : "Show"}
+              </Button>
             </div>
+
             <button className="login-button" onClick={submitHandler}>
               {t("login")}
             </button>

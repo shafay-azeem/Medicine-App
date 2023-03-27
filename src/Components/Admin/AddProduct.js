@@ -126,6 +126,16 @@ const AddProduct = (props) => {
     uploadImg: require("../Main/image.png"),
   };
 
+  function deleteimg() {
+    setImage(null);
+    document.getElementById("img").value = "";
+  }
+
+  function deleteVideo() {
+    setVideo(null);
+    document.getElementById("video").value = "";
+  }
+
   const pictureCapture = async (event) => {
     const formData = new FormData();
     formData.append("file", event.target.files[0]);
@@ -275,35 +285,77 @@ const AddProduct = (props) => {
               </Form.Group>
             </Form>
 
-            {Edit === "true" ? (
-              <div className="text-center">
-                <Button
-                  className="mt-1"
-                  style={{
-                    backgroundColor: "#224480",
-                    border: "none",
-                    color: "white",
-                    width: "35%",
-                  }}
-                  onClick={updateProduct}
-                >
-                  {t("updateBtn")}
-                </Button>
+            {video || image ? (
+              <div>
+                {Edit === "true" ? (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: "35%",
+                      }}
+                      onClick={updateProduct}
+                    >
+                      {t("updateBtn")}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: "35%",
+                      }}
+                      onClick={createProduct}
+                    >
+                      {t("saveBtn")}
+                    </Button>
+                  </div>
+                )}
               </div>
             ) : (
-              <div className="text-center">
-                <Button
-                  className="mt-1"
-                  style={{
-                    backgroundColor: "#224480",
-                    border: "none",
-                    color: "white",
-                    width: "35%",
-                  }}
-                  onClick={createProduct}
-                >
-                  {t("saveBtn")}
-                </Button>
+              <div>
+                {Edit === "true" ? (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: "35%",
+                        cursor: "no-drop",
+                      }}
+                      disabled
+                      onClick={updateProduct}
+                    >
+                      {t("updateBtn")}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: "35%",
+                        cursor: "no-drop",
+                      }}
+                      disabled
+                      onClick={createProduct}
+                    >
+                      {t("saveBtn")}
+                    </Button>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -318,6 +370,7 @@ const AddProduct = (props) => {
                       width: "300px",
                     }}
                     src={image}
+                    id="img"
                     alt="example"
                     className="img-fluid"
                   />
@@ -328,6 +381,10 @@ const AddProduct = (props) => {
                 </div>
               )}
             </section>
+
+            <Button h="1.75rem" size="sm" onClick={deleteimg}>
+              Delete Image
+            </Button>
 
             <div
               style={{
@@ -357,7 +414,7 @@ const AddProduct = (props) => {
               {video ? (
                 <div className="file-container">
                   <video width="300" height="162" controls>
-                    <source src={video} type="video/mp4"></source>
+                    <source src={video} type="video/mp4" id="video"></source>
                   </video>
                 </div>
               ) : (
@@ -366,6 +423,10 @@ const AddProduct = (props) => {
                 </div>
               )}
             </section>
+
+            <Button h="1.75rem" size="sm" onClick={deleteVideo}>
+              Delete Video
+            </Button>
 
             <div
               style={{

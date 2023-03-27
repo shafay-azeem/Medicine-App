@@ -18,6 +18,7 @@ export const AboutUs = () => {
     trust: require("../Main/trust.png"),
     development: require("../Main/development.png"),
     environment: require("../Main/environment.png"),
+    // aboutBanner: require("../Main/aboutUsBanner.png"),
   };
   const { t } = useTranslation();
   return (
@@ -25,6 +26,12 @@ export const AboutUs = () => {
       <Header Allow={Allow}></Header>
 
       <div className="container py-5 align-items-center">
+        {/* <div className="row no-gutter flex-column">
+          <div>
+            <img src={img.aboutBanner} class="img-fluid" />
+          </div>
+        </div> */}
+
         <div className="row py-4 d-flex align-items-center justify-content-center">
           <div className="myImage">
             {/* <img className="img-fluid" src={AboutBanner} alt="cover" /> */}
