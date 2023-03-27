@@ -20,6 +20,7 @@ import Footer from "../Miscellaneous/Footer";
 import Card from "react-bootstrap/Card";
 import apiFunctions from "../../global/GlobalFunction";
 import { API_URL, BASE_URL } from "../../global/Constant";
+import { BsFillTrashFill } from "react-icons/bs";
 
 const AddProduct = (props) => {
   const [video, setVideo] = useState();
@@ -383,7 +384,7 @@ const AddProduct = (props) => {
             </section>
 
             <Button h="1.75rem" size="sm" onClick={deleteimg}>
-              Delete Image
+              <BsFillTrashFill />
             </Button>
 
             <div
@@ -425,13 +426,13 @@ const AddProduct = (props) => {
             </section>
 
             <Button h="1.75rem" size="sm" onClick={deleteVideo}>
-              Delete Video
+              <BsFillTrashFill />
             </Button>
 
             <div
               style={{
                 width: "35%",
-                // marginTop: "8px",
+                marginTop: "12px",
                 backgroundColor: "#224480",
                 color: "white",
               }}
