@@ -8,6 +8,7 @@ import Footer from "../Miscellaneous/Footer";
 import apiFunctions from "../../global/GlobalFunction";
 import { API_URL, BASE_URL } from "../../global/Constant";
 import { Button } from "react-bootstrap";
+import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
   const { t } = useTranslation();
@@ -91,9 +92,38 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <Button h="1.75rem" size="sm" onClick={handleClick}>
+              {show ? (
+                <BsFillEyeFill
+                  onClick={handleClick}
+                  style={{
+                    position: "absolute",
+                    marginLeft: "-2rem",
+                    marginTop: "13px",
+                  }}
+                />
+              ) : (
+                <BsFillEyeSlashFill
+                  onClick={handleClick}
+                  style={{
+                    position: "absolute",
+                    marginLeft: "-2rem",
+                    marginTop: "13px",
+                  }}
+                />
+              )}
+
+              {/* <Button
+                h="1.75rem"
+                size="sm"
+                onClick={handleClick}
+                style={{
+                  position: "absolute",
+                  marginLeft: "-4rem",
+                  marginTop: "5px",
+                }}
+              >
                 {show ? "Hide" : "Show"}
-              </Button>
+              </Button> */}
             </div>
 
             <button className="login-button" onClick={submitHandler}>
