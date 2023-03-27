@@ -285,80 +285,6 @@ const AddProduct = (props) => {
                 />
               </Form.Group>
             </Form>
-
-            {video || image ? (
-              <div>
-                {Edit === "true" ? (
-                  <div className="text-center">
-                    <Button
-                      className="mt-1"
-                      style={{
-                        backgroundColor: "#224480",
-                        border: "none",
-                        color: "white",
-                        width: "35%",
-                      }}
-                      onClick={updateProduct}
-                    >
-                      {t("updateBtn")}
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="text-center">
-                    <Button
-                      className="mt-1"
-                      style={{
-                        backgroundColor: "#224480",
-                        border: "none",
-                        color: "white",
-                        width: "35%",
-                      }}
-                      onClick={createProduct}
-                    >
-                      {t("saveBtn")}
-                    </Button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div>
-                {Edit === "true" ? (
-                  <div className="text-center">
-                    <Button
-                      className="mt-1"
-                      style={{
-                        backgroundColor: "#224480",
-                        border: "none",
-                        color: "white",
-                        width: "35%",
-                        cursor: "no-drop",
-                      }}
-                      disabled
-                      onClick={updateProduct}
-                    >
-                      {t("updateBtn")}
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="text-center">
-                    <Button
-                      className="mt-1"
-                      style={{
-                        backgroundColor: "#224480",
-                        border: "none",
-                        color: "white",
-                        width: "35%",
-                        cursor: "no-drop",
-                      }}
-                      disabled
-                      onClick={createProduct}
-                    >
-                      {t("saveBtn")}
-                    </Button>
-                  </div>
-                )}
-              </div>
-            )}
           </div>
 
           <div className="col-md-6 col-sm-12 d-flex flex-column align-items-center ">
@@ -383,30 +309,34 @@ const AddProduct = (props) => {
               )}
             </section>
 
-            <Button h="1.75rem" size="sm" onClick={deleteimg}>
-              <BsFillTrashFill />
-            </Button>
 
-            <div
-              style={{
-                width: "35%",
-                marginTop: "12px",
-                backgroundColor: "#224480",
-                color: "white",
-              }}
-              class=" my-Upload file btn  btn-Upload"
-            >
-              {t("uploadPicture")}
-              <input
-                className=""
+            <div className="d-flex justify-content-around align-items-center">
+              <div
                 style={{
-                  alignSelf: "center",
+                  // width: "35%",
+                  marginTop: "12px",
+                  backgroundColor: "#224480",
+                  color: "white",
                 }}
-                type="file"
-                name="file"
-                onChange={pictureCapture}
-                accept=".jpg,.png"
-              />
+                class="my-Upload file btn  btn-Upload"
+              >
+                {t("uploadPicture")}
+                <input
+                  className=""
+                  style={{
+                    alignSelf: "center",
+                  }}
+                  type="file"
+                  name="file"
+                  onChange={pictureCapture}
+                  accept=".jpg,.png"
+                />
+              </div>
+              <Button className="ms-3 " style={{
+                marginTop: "12px",
+              }} h="1.75rem" size="md" onClick={deleteimg}>
+                <BsFillTrashFill />
+              </Button>
             </div>
 
             {/* 2 */}
@@ -425,33 +355,124 @@ const AddProduct = (props) => {
               )}
             </section>
 
-            <Button h="1.75rem" size="sm" onClick={deleteVideo}>
-              <BsFillTrashFill />
-            </Button>
-
-            <div
-              style={{
-                width: "35%",
-                marginTop: "12px",
-                backgroundColor: "#224480",
-                color: "white",
-              }}
-              className="my-Upload file btn btn-Upload"
-            >
-              {t("uploadVideo")}
-              <input
-                className=""
+            <div className="d-flex justify-content-around align-items-center">
+              <div
                 style={{
-                  alignSelf: "center",
+                  marginTop: "12px",
+                  backgroundColor: "#224480",
+                  color: "white",
                 }}
-                type="file"
-                name="file"
-                onChange={videoCapture}
-                accept="video/*"
-              />
+                className="my-Upload file btn btn-Upload"
+              >
+                {t("uploadVideo")}
+                <input
+                  className=""
+                  style={{
+                    alignSelf: "center",
+                  }}
+                  type="file"
+                  name="file"
+                  onChange={videoCapture}
+                  accept="video/*"
+                />
+              </div>
+              <Button style={{
+                marginTop: "12px",
+              }} className="ms-3" h="1.75rem" size="md" onClick={deleteVideo}>
+                <BsFillTrashFill />
+              </Button>
             </div>
           </div>
         </div>
+
+
+        {/* ------Save Button------  */}
+
+        <div className="row my-4">
+          <div className="col-md-6">
+            {video || image ? (
+              <div>
+                {Edit === "true" ? (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: '50%',
+                      }}
+                      onClick={updateProduct}
+                    >
+                      {t("updateBtn")}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: '50%',
+                      }}
+                      onClick={createProduct}
+                    >
+                      {t("saveBtn")}
+                    </Button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div>
+                {Edit === "true" ? (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: '50%',
+                        cursor: "no-drop",
+                      }}
+                      disabled
+                      onClick={updateProduct}
+                    >
+                      {t("updateBtn")}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <Button
+                      className="mt-1"
+                      style={{
+                        backgroundColor: "#224480",
+                        border: "none",
+                        color: "white",
+                        width: '50%',
+                        cursor: "no-drop",
+                      }}
+                      disabled
+                      onClick={createProduct}
+                    >
+                      {t("saveBtn")}
+                    </Button>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+
+
+
+
+
+
+
+
       </div>
       {/* <MDBContainer className="my-5">
         <Row>
