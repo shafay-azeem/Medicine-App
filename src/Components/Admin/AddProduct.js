@@ -127,14 +127,38 @@ const AddProduct = (props) => {
     uploadImg: require("../Main/image.png"),
   };
 
+  // function deleteimg() {
+  //   setImage(null);
+  //   document.getElementById("img").value = "";
+  // }
+
   function deleteimg() {
     setImage(null);
-    document.getElementById("img").value = "";
+    const imgElement = document.getElementById("img");
+    if (imgElement) {
+      imgElement.value = "";
+    } else {
+      const errorMessage =
+        "Unable to delete the image. The image element was not found.";
+      alert(errorMessage);
+    }
   }
+
+  // function deleteVideo() {
+  //   setVideo(null);
+  //   document.getElementById("video").value = "";
+  // }
 
   function deleteVideo() {
     setVideo(null);
-    document.getElementById("video").value = "";
+    const videoElement = document.getElementById("video");
+    if (videoElement) {
+      videoElement.value = "";
+    } else {
+      const errorMessage =
+        "Unable to delete the video. The video element was not found.";
+      alert(errorMessage);
+    }
   }
 
   const pictureCapture = async (event) => {
@@ -309,7 +333,6 @@ const AddProduct = (props) => {
               )}
             </section>
 
-
             <div className="d-flex justify-content-around align-items-center">
               <div
                 style={{
@@ -332,9 +355,16 @@ const AddProduct = (props) => {
                   accept=".jpg,.png"
                 />
               </div>
-              <Button className="ms-3 " style={{
-                marginTop: "12px",
-              }} h="1.75rem" size="md" onClick={deleteimg}>
+              <Button
+                className="ms-3 "
+                style={{
+                  marginTop: "12px",
+                }}
+                h="1.75rem"
+                size="md"
+                onClick={deleteimg}
+                variant="outline-danger"
+              >
                 <BsFillTrashFill />
               </Button>
             </div>
@@ -376,15 +406,21 @@ const AddProduct = (props) => {
                   accept="video/*"
                 />
               </div>
-              <Button style={{
-                marginTop: "12px",
-              }} className="ms-3" h="1.75rem" size="md" onClick={deleteVideo}>
+              <Button
+                style={{
+                  marginTop: "12px",
+                }}
+                className="ms-3"
+                h="1.75rem"
+                size="md"
+                onClick={deleteVideo}
+                variant="outline-danger"
+              >
                 <BsFillTrashFill />
               </Button>
             </div>
           </div>
         </div>
-
 
         {/* ------Save Button------  */}
 
@@ -400,7 +436,7 @@ const AddProduct = (props) => {
                         backgroundColor: "#224480",
                         border: "none",
                         color: "white",
-                        width: '50%',
+                        width: "50%",
                       }}
                       onClick={updateProduct}
                     >
@@ -415,7 +451,7 @@ const AddProduct = (props) => {
                         backgroundColor: "#224480",
                         border: "none",
                         color: "white",
-                        width: '50%',
+                        width: "50%",
                       }}
                       onClick={createProduct}
                     >
@@ -434,7 +470,7 @@ const AddProduct = (props) => {
                         backgroundColor: "#224480",
                         border: "none",
                         color: "white",
-                        width: '50%',
+                        width: "50%",
                         cursor: "no-drop",
                       }}
                       disabled
@@ -451,7 +487,7 @@ const AddProduct = (props) => {
                         backgroundColor: "#224480",
                         border: "none",
                         color: "white",
-                        width: '50%',
+                        width: "50%",
                         cursor: "no-drop",
                       }}
                       disabled
@@ -465,14 +501,6 @@ const AddProduct = (props) => {
             )}
           </div>
         </div>
-
-
-
-
-
-
-
-
       </div>
       {/* <MDBContainer className="my-5">
         <Row>
