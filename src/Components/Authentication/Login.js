@@ -93,7 +93,7 @@ const Login = () => {
               />
 
               {show ? (
-                <BsFillEyeFill
+                <BsFillEyeSlashFill
                   onClick={handleClick}
                   style={{
                     position: "absolute",
@@ -102,7 +102,7 @@ const Login = () => {
                   }}
                 />
               ) : (
-                <BsFillEyeSlashFill
+                <BsFillEyeFill
                   onClick={handleClick}
                   style={{
                     position: "absolute",

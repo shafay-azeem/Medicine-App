@@ -147,11 +147,11 @@ ul li {
   }
 }
 
-.myImage {
+/* .myImage {
   background-image: url("./Components/Main/aboutUsBanner.png");
   height: 400px;
   background-size: cover;
-}
+} */
 
 .iconImgStyle {
   width: 75px;
