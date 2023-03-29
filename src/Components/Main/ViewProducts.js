@@ -52,10 +52,10 @@ export const ViewProducts = () => {
       <div className="container">
         <Header></Header>
 
-        <div className="row no-gutter flex-column">
+        <div className=" row no-gutter flex-column">
           <div
             style={{
-              marginTop: "70px",
+              marginTop: "110px",
             }}
           >
             <img src={img.banner} class="img-fluid" />

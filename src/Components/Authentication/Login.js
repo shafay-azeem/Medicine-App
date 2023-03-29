@@ -67,7 +67,7 @@ const Login = () => {
 
       <div className="container text-center ">
         <img
-          style={{ marginTop: "120px", height: "100px", width: "130px" }}
+          style={{ marginTop: "140px", height: "100px", width: "130px" }}
           className="img-fluid"
           src={image.ProfileImage}
           alt="img"

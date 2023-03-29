@@ -15,10 +15,12 @@ p {
   font-family: Roboto;
   font-weight: 400;
 }
+
 ul li {
   margin-bottom: 7px;
   font-size: 18px;
 }
+
 .headingStyling {
   font-weight: 700;
   text-transform: capitalize;
@@ -158,6 +160,7 @@ ul li {
   height: 75px;
   margin-bottom: 15px;
 }
+
 .pointsStyling {
   line-height: 1.2;
   font-size: 18px;
@@ -188,3 +191,5 @@ ul li {
   border-color: #001232 !important;
   box-shadow: none !important;
 }
+
+

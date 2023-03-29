@@ -19,7 +19,9 @@ const StaticCards = () => {
     <>
       <Header />
       <section class="page-header">
-        <div class="container">
+        <div class="container" style={{
+          marginTop: '50px'
+        }}>
           <div class="row no-gutter flex-column pb-3 mt-4">
             <div class="p-title">{t("Career")}</div>
           </div>

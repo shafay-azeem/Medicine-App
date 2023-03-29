@@ -23,7 +23,7 @@ const OurServices = () => {
   return (
     <>
       <Header />
-      <section class="section-big main-color" style={{ marginTop: "5rem" }}>
+      <section class="section-big main-color" style={{ marginTop: "6rem" }}>
         <div class="container">
           <div class="row">
             <div class="col-md-12 pb-20 text-center">

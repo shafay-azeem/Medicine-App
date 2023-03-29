@@ -44,3 +44,12 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+/* ---------GLOBAL MEDIA QUERY------------ */
+
+/* @media screen and (min-width: 280px) {
+  .Global-style {
+      height: 120px;
+  }
+} */
+

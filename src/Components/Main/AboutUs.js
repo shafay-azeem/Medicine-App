@@ -25,8 +25,10 @@ export const AboutUs = () => {
     <>
       <Header Allow={Allow}></Header>
 
-      <div className="container py-5 align-items-center mt-4">
-        <div className="row no-gutter flex-column">
+      <div className="container py-5 align-items-center" style={{
+        marginTop: '50px'
+      }}>
+        <div className="row no-gutter flex-column" >
           <div>
             <img src={img.aboutBanner} class="img-fluid" />
           </div>
