@@ -85,29 +85,43 @@ const Header = (props) => {
   };
 
   let img = {
-    logo: require("../Miscellaneous/headerLogo2.png"),
+    logo: require("../Miscellaneous/logo.png"),
+    logoYemen: require("../Miscellaneous/logo-yemen.png"),
   };
 
   return (
     <Navbar expand="lg" fixed="top" className="navbar" id="grad1">
       <Container>
         <Navbar.Brand>
-          <div className="d-flex">
-            <img
-              className="preview me-2 mx-auto align-middle"
-              src={img.logo}
-              alt=""
-              width="35px"
-              height="35px"
-            />
-            <span className="align-middle" onClick={logout}>
+          {selected === "GB" ? (
+            <div className="d-flex">
+              <img
+                className="preview me-2 mx-auto align-middle img-fluid"
+                src={img.logo}
+                alt=""
+                style={{ maxWidth: "250px" }}
+              />
+              {/* <span className="align-middle" onClick={logout}>
               {t("MuneerAliCompany")}
-            </span>
-          </div>
+            </span> */}
+            </div>
+          ) : (
+            <div className="d-flex">
+              <img
+                className="preview me-2 mx-auto align-middle img-fluid"
+                src={img.logoYemen}
+                alt=""
+                style={{ maxWidth: "250px" }}
+              />
+              {/* <span className="align-middle" onClick={logout}>
+          {t("MuneerAliCompany")}
+        </span> */}
+            </div>
+          )}
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" >
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
 
