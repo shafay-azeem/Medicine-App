@@ -98,6 +98,7 @@ const Login = () => {
                   style={{
                     position: "absolute",
                     marginLeft: "-2rem",
+                    marginRight: "-30px",
                     marginTop: "13px",
                   }}
                 />
@@ -107,23 +108,11 @@ const Login = () => {
                   style={{
                     position: "absolute",
                     marginLeft: "-2rem",
+                    marginRight: "-30px",
                     marginTop: "13px",
                   }}
                 />
               )}
-
-              {/* <Button
-                h="1.75rem"
-                size="sm"
-                onClick={handleClick}
-                style={{
-                  position: "absolute",
-                  marginLeft: "-4rem",
-                  marginTop: "5px",
-                }}
-              >
-                {show ? "Hide" : "Show"}
-              </Button> */}
             </div>
 
             <button className="login-button" onClick={submitHandler}>

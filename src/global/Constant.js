@@ -1,4 +1,5 @@
 export const BASE_URL = "http://localhost:7000/api/";
+// export const BASE_URL = "http://muneerali.com/api/";
 
 export const API_URL = {
   //User
