@@ -29,7 +29,7 @@
   "updateProductHeading": "تحديث المنتج",
   "createProductHeading": "إنشاء منتج",
   "ourServices": "خدماتنا",
-  "services": "خدمات",
+  "services": "الخدمات",
   "companyDescription": "تشارك شركة منير علي في استيراد الأدوية والمستلزمات الطبية ومستحضرات التجميل في جميع عمليات البيع وكذلك مناقصات الاستيراد والتسجيل والتسويق والترويج والتوزيع.",
   "importing": "استيراد",
   "importingDescription": "نحن على دراية جيدة بخصائص السوق ونقدم أنواعًا جديدة من المنتجات ، كما نقوم أيضًا باستيراد الأدوية التي يحتاجها السوق من أوروبا والهند والشرق الأوسط.",
@@ -54,6 +54,8 @@
   "branch4": "تعز",
   "branch5": "إب",
   "branch6": "الضالع",
+  "branch7": "المكلا",
+  "branch8": "شبوة",
   "Companieswedealwith": "الشركات التي نتعامل معها",
   "kenya": "كينيا",
   "Kenya1": "IVEE INFUSIONS EPZ LTD",
@@ -115,18 +117,19 @@
   "imports": "الواردات",
 
   "StaticNumber": "رقم ال",
-  "importedProducts": "المنتجات المستوردة",
+  "importedProducts": "منتجات",
   "Branches": "الفروع",
   "Vehicles": "مركبات",
   "Cutsomers": "عملاء",
   "Career": "حياة مهنية",
 
-  "contactUs": " اتصال",
+  "contactUs": " اتصل بنا",
   "contactUsHeading": "اتصل بنا",
   "name": "اسم",
   "phonenumber": "رقم التليفون",
   "emailAddress": "عنوان البريد الإلكتروني",
   "message": "رسالة",
   "sendBtn": "يرسل",
-  "contactUsAlert": "شكرًا لك! سنعود إليك قريبًا"
+  "contactUsAlert": "شكرًا لك! سنعود إليك قريبًا",
+  "ourProducts": "منتجاتنا"
 }

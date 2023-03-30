@@ -53,6 +53,8 @@
   "branch4": "Taiz",
   "branch5": "Ibb",
   "branch6": "Aldhale",
+  "branch7": "Al Mukalla",
+  "branch8": "Shabwah",
   "Companieswedealwith": "Companies we deal with",
   "kenya": "KENYA",
   "Kenya1": "IVEE INFUSIONS EPZ LTD",
@@ -113,18 +115,19 @@
 
   "StaticNumber": "Number Of",
 
-  "importedProducts": "Imported Products",
+  "importedProducts": "Products",
   "Branches": "Branches",
   "Vehicles": "Vehicles",
   "Cutsomers": "Customers",
   "Career": "Career",
 
-  "contactUs": "Contact",
+  "contactUs": "Contact us",
   "contactUsHeading": "Contact Us",
   "name": "Name",
   "phonenumber": "Phone Number",
   "emailAddress": "Email Address",
   "message": "Message",
   "sendBtn": "Send",
-  "contactUsAlert": "Thank you! We'll get back to you soon."
+  "contactUsAlert": "Thank you! We'll get back to you soon.",
+  "ourProducts": "Our Products"
 }

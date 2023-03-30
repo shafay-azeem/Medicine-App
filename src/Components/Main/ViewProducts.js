@@ -7,6 +7,7 @@ import {
 import Header from "../Miscellaneous/Header";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import "./ViewProducts.css";
+import "../Miscellaneous/StaticCards.css";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import Footer from "../Miscellaneous/Footer";
@@ -68,9 +69,12 @@ export const ViewProducts = () => {
           </div>
         </div> */}
         <section class="page-header">
-          <div class="container" style={{
-            marginTop: '50px'
-          }}>
+          <div
+            class="container"
+            style={{
+              marginTop: "50px",
+            }}
+          >
             <div class="row no-gutter flex-column pb-3 mt-4">
               <div class="p-title">{t("Career")}</div>
             </div>
@@ -84,8 +88,11 @@ export const ViewProducts = () => {
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-10">
-                <div class="row counters " style={{ backgroundColor: "#224480" }}>
-                  <div class="col-sm-3">
+                <div
+                  class="row counters "
+                  style={{ backgroundColor: "#224480" }}
+                >
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-12 text-left text-sm-center mb-5">
                     <div class="inner">
                       <span class="head">{t("importedProducts")}</span>
                       <div class="number">
@@ -95,7 +102,7 @@ export const ViewProducts = () => {
                     </div>
                   </div>
 
-                  <div class="col-sm-3">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-12 text-left text-sm-center mb-5">
                     <div class="inner">
                       <span class="head">{t("Branches")}</span>
                       <div class="number">
@@ -104,8 +111,7 @@ export const ViewProducts = () => {
                       </div>
                     </div>
                   </div>
-
-                  <div class="col-sm-3">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-12 text-left text-sm-center mb-5">
                     <div class="inner">
                       <span class="head">{t("Vehicles")}</span>
                       <div class="number">
@@ -115,7 +121,7 @@ export const ViewProducts = () => {
                     </div>
                   </div>
 
-                  <div class="col-sm-3">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-12 text-left text-sm-center mb-5">
                     <div class="inner">
                       <span class="head">{t("Cutsomers")}</span>
                       <div class="number">
@@ -171,6 +177,7 @@ export const ViewProducts = () => {
           <img src={img.banner} class="img-fluid" />
         </div> */}
         <Container style={{ marginTop: "1rem", marginBottom: "5rem" }}>
+          <h2 class="section-title mb-10 text-center">{t("ourProducts")}</h2>
           <Row>
             {medicineList?.map((x, index) => {
               return (

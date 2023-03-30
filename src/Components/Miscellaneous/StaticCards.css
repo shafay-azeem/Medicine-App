@@ -47,12 +47,12 @@
 }
 
 .counters {
-  padding: 50px 50px 50px;
+  padding: 50px 20px 20px;
   color: #fff;
   border-radius: 15px;
 }
 .counters .number {
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 800;
   line-height: 1;
 }
@@ -61,11 +61,16 @@
   font-size: 15px;
   letter-spacing: 0.2px;
 }
-.counters .number {
+@media (min-width: 768px) {
+  .counters {
+    padding: 50px 50px 20px;
+  }
+}
+/* .counters .number {
   font-size: 40px;
   font-weight: 800;
   line-height: 1;
-}
+} */
 .scounter {
   margin-top: -120px;
 }
