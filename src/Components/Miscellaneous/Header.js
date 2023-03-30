@@ -30,6 +30,8 @@ const Header = (props) => {
       helper = "YE";
       localStorage.setItem("helper", helper);
     } else {
+      // i18next.changeLanguage("en");
+      // helper = "GB";
       localStorage.getItem("helper");
       setSelected(localStorage.getItem("helper"));
     }
@@ -127,22 +129,22 @@ const Header = (props) => {
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
 
-            <Nav.Link onClick={staticCard}>{t("contactUs")}</Nav.Link>
-
-            <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
-
-            <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
-
             {token ? (
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
             ) : null}
+
+            <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
+
+            <Nav.Link onClick={ourService}>{t("services")}</Nav.Link>
+
+            <Nav.Link onClick={staticCard}>{t("contactUs")}</Nav.Link>
 
             {/* {Allow ? <Nav.Link >Update Product</Nav.Link> : null} */}
 
             <div className="d-flex align-items-center me-2">
               {/* <LanguageOption onChange={(e) => handleClick(e)}></LanguageOption> */}
               <ReactFlagsSelect
-                selected={selected}
+                selected={selected ? selected : "GB"}
                 onSelect={setSelected}
                 placeholder="Select Language"
                 countries={["GB", "YE"]}

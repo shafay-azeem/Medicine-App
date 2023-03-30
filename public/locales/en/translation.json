@@ -28,6 +28,7 @@
   "updateProductHeading": "UPDATE PRODUCT",
   "createProductHeading": "CREATE PRODUCT",
   "ourServices": "Our Services",
+  "services": "Services",
   "companyDescription": "Muneer Ali Company participates in the import of medicines, medical supplies and cosmetics in all sales, as well as tenders for import, registration, marketing, promotion and distribution.",
   "importing": "Importing",
   "importingDescription": "We are well acquainted with the characteristics of the market and introduce new varieties of products, as we are also importing medicines needed by the market from Europe, India and the Middle East.",
@@ -118,7 +119,8 @@
   "Cutsomers": "Customers",
   "Career": "Career",
 
-  "contactUs": "Contact Us",
+  "contactUs": "Contact",
+  "contactUsHeading": "Contact Us",
   "name": "Name",
   "phonenumber": "Phone Number",
   "emailAddress": "Email Address",

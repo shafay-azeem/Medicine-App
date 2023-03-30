@@ -62,7 +62,7 @@ const StaticCards = () => {
                 </div>
                 <div class="col-lg-6">
                   <div class="contact-box ml-3">
-                    <h1 class="section-title mt-2">{t("contactUs")}</h1>
+                    <h1 class="section-title mt-2">{t("contactUsHeading")}</h1>
                     <form class="mt-4" ref={form} onSubmit={sendEmail}>
                       <div class="row">
                         <div class="col-lg-12">
@@ -91,7 +91,7 @@ const StaticCards = () => {
                           <div class="form-group mt-2">
                             <input
                               class="form-control"
-                              type="number"
+                              type="text"
                               placeholder={t("phonenumber")}
                               name="user_phone"
                               required
