@@ -93,12 +93,14 @@ const Header = (props) => {
     <Navbar expand="lg" fixed="top" className="navbar" id="grad1">
       <Container>
         <Navbar.Brand>
-          {selected === "GB" ? (
+          {selected === "YE" ? (
             <div className="d-flex">
               <img
                 className="preview me-2 mx-auto align-middle img-fluid"
-                src={img.logo}
+
+                src={img.logoYemen}
                 alt=""
+                onClick={Home}
                 style={{ maxWidth: "250px" }}
               />
               {/* <span className="align-middle" onClick={logout}>
@@ -109,8 +111,9 @@ const Header = (props) => {
             <div className="d-flex">
               <img
                 className="preview me-2 mx-auto align-middle img-fluid"
-                src={img.logoYemen}
+                src={img.logo}
                 alt=""
+                onClick={Home}
                 style={{ maxWidth: "250px" }}
               />
               {/* <span className="align-middle" onClick={logout}>

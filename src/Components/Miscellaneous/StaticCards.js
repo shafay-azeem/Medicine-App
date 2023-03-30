@@ -1,237 +1,133 @@
-import React from "react";
+import React, { useRef } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "../Miscellaneous/StaticCards.css";
 import CountUp from "react-countup";
+import emailjs from '@emailjs/browser';
 import { useTranslation } from "react-i18next";
 
 const StaticCards = () => {
   const { t } = useTranslation();
   let img = {
-    NumberOfProducts: require("./importing per year.jpg"),
-    NumberOfBranches: require("./no of Branches.jpg"),
-    NumberOfCustomers: require("./mumber of customers.jpg"),
-    NumberOfCars: require("./number of vehicles.jpg"),
-    importBanner: require("..//Miscellaneous/about-us-hero.jpg"),
+    email: require('./StaticCardsImages/email.png'),
+    adress: require('./StaticCardsImages/location.png'),
+    phone: require('./StaticCardsImages/contact.png'),
+    cover: require('./StaticCardsImages/g2.jpg')
+  };
+
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_mbtchfa', 'template_vorw56g', form.current, 'wjISGAvtOLmGLG-eg')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
   };
 
   return (
     <>
       <Header />
-      <section class="page-header">
-        <div class="container" style={{
-          marginTop: '50px'
-        }}>
-          <div class="row no-gutter flex-column pb-3 mt-4">
-            <div class="p-title">{t("Career")}</div>
-          </div>
-          <div class="row no-gutter flex-column">
-            <img src={img.importBanner} class="img-fluid" />
-          </div>
-        </div>
-      </section>
-      <section class="scounter">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="row counters " style={{ backgroundColor: "#224480" }}>
-                <div class="col-sm-3">
-                  <div class="inner">
-                    <span class="head">{t("importedProducts")}</span>
-                    <div class="number">
-                      +
-                      <CountUp end={1000} duration={5} />
+      <div className="container" style={{
+        marginTop: '70px'
+      }}>
+        <div class="contact3 py-5">
+          <div class="row no-gutters">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="card">
+                    <img src={img.cover} class="img-fluid" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="contact-box ml-3">
+                    <h1 class="font-weight-light mt-2">Quick Contact</h1>
+                    <form class="mt-4" ref={form} onSubmit={sendEmail}>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="form-group mt-2">
+                            <input class="form-control" type="text" placeholder="name" name="user_name" />
+
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="form-group mt-2">
+                            <input class="form-control" type="email" placeholder="email address" name="user_email" />
+
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="form-group mt-2">
+                            <input class="form-control" type="text" placeholder="phone" name="user_phone" />
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="form-group mt-2">
+                            <textarea class="form-control" rows="3" placeholder="message" name="message"></textarea>
+
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <input type="submit" class="mt-3 text-white border-0 px-3 py-2 bg-black" value="Send" />
+
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-12 mt-3">
+                  <div class="card mt-4 border-0 mb-4">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4">
+                        <div class="card-body d-flex align-items-center c-detail pl-0">
+                          <div class="mr-3 align-self-center">
+                            <img src={img.adress} />
+                          </div>
+                          <div class="">
+                            <p class="ms-2">Aden, Yemen</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4">
+                        <div class="card-body d-flex align-items-center c-detail">
+                          <div class="mr-3 align-self-center">
+                            <img src={img.phone} />
+                          </div>
+                          <div class="">
+                            <p class="ms-2">+967 774577776</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4">
+                        <div class="card-body d-flex align-items-center c-detail">
+                          <div class="mr-3 align-self-center">
+                            <img src={img.email} />
+                          </div>
+                          <div class="">
+                            <p class="ms-2">
+                              muneer.alicompany@gmail.com
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-sm-3">
-                  <div class="inner">
-                    <span class="head">{t("Branches")}</span>
-                    <div class="number">
-                      +
-                      <CountUp end={50} duration={5} />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="inner">
-                    <span class="head">{t("Vehicles")}</span>
-                    <div class="number">
-                      +
-                      <CountUp end={100} duration={5} />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-3">
-                  <div class="inner">
-                    <span class="head">{t("Cutsomers")}</span>
-                    <div class="number">
-                      +
-                      <CountUp end={500} duration={5} />
-                    </div>
-                    {/* <p>{t("Cutsomers")}</p> */}
-                  </div>
-                </div>
               </div>
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="content py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3 ">
-              <img
-                className="img-fluid imgStyle"
-                src={img.NumberOfProducts}
-                alt="imp"
-              />
-            </div>
-            <div class="col-sm-3 ">
-              <img
-                className="img-fluid imgStyle"
-                src={img.NumberOfBranches}
-                alt="imp"
-              />
-            </div>
-            <div class="col-sm-3 ">
-              <img
-                className="img-fluid imgStyle"
-                src={img.NumberOfCars}
-                alt="imp"
-              />
-            </div>
-            <div class="col-sm-3 ">
-              <img
-                className="img-fluid"
-                src={img.NumberOfCustomers}
-                alt="imp"
-              />
             </div>
           </div>
         </div>
-      </section>
-      {/* <section class="section-big main-color" style={{ marginTop: "5rem" }}>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 pb-20 text-center">
-              <h2 class="section-title mb-10">{t("OurImports")}</h2>
+      </div>
 
-              <div class="exp-separator center-separator">
-                <div class="exp-separator-inner"></div>
-              </div>
-            </div>
-          </div>
 
-          <div className="row">
-            <div className="col-1"></div>
-            <div className="col-10">
-              <div className="row py-2">
-                <div className="col-md-6">
-                  <div className="Main-Body  px-3 pb-4 shadow">
-                    <img
-                      style={{
-                        width: "100%",
-                        maxWidth: "100%",
-                        height: "50%",
-                        padding: "10px",
-                        alignSelf: "center",
-                      }}
-                      className="img-fluid"
-                      src={img.NumberOfProducts}
-                      alt="imp"
-                    />
 
-                    <p className="countStyling mt-2 text-center">
-                      <CountUp end={1000} duration={5} />
-                    </p>
-
-                    <p className="Heading mt-2 text-center">{t("static1")}</p>
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <div className="Main-Body  px-3 pb-4 shadow">
-                    <img
-                      style={{
-                        width: "100%",
-                        maxWidth: "100%",
-                        height: "50%",
-                        padding: "10px",
-                        alignSelf: "center",
-                      }}
-                      className="img-fluid"
-                      src={img.NumberOfBranches}
-                      alt="imp"
-                    />
-
-                    <p className="countStyling mt-2 text-center">
-                      <CountUp end={1000} duration={5} />
-                    </p>
-
-                    <p className="Heading mt-2 text-center">{t("static2")}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row py-2 my-4">
-                <div className="col-md-6">
-                  <div className="Main-Body  px-3 pb-4 shadow">
-                    <img
-                      style={{
-                        width: "100%",
-                        maxWidth: "100%",
-                        height: "50%",
-                        padding: "10px",
-                        alignSelf: "center",
-                      }}
-                      className="img-fluid"
-                      src={img.NumberOfCars}
-                      alt="imp"
-                    />
-
-                    <p className="countStyling mt-2 text-center">
-                      <CountUp end={1000} duration={5} />
-                    </p>
-
-                    <p className="Heading mt-2 text-center">{t("static3")}</p>
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <div className="Main-Body  px-3 pb-4 shadow">
-                    <img
-                      style={{
-                        width: "100%",
-                        maxWidth: "100%",
-                        height: "50%",
-                        padding: "10px",
-                        alignSelf: "center",
-                      }}
-                      className="img-fluid"
-                      src={img.NumberOfCustomers}
-                      alt="imp"
-                    />
-
-                    <p className="countStyling mt-2 text-center">
-                      <CountUp end={1000} duration={5} />
-                    </p>
-
-                    <p className="Heading mt-2 text-center">{t("static4")}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-1"></div>
-          </div>
-        </div>
-      </section> */}
       <Footer></Footer>
     </>
   );
