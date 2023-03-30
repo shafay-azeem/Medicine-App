@@ -74,7 +74,7 @@ const Header = (props) => {
 
   const staticCard = () => {
     navigate({
-      pathname: "/career",
+      pathname: "/contactus",
     });
   };
 
@@ -97,7 +97,6 @@ const Header = (props) => {
             <div className="d-flex">
               <img
                 className="preview me-2 mx-auto align-middle img-fluid"
-
                 src={img.logoYemen}
                 alt=""
                 onClick={Home}
@@ -128,7 +127,7 @@ const Header = (props) => {
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
 
-            <Nav.Link onClick={staticCard}>{t("Career")}</Nav.Link>
+            <Nav.Link onClick={staticCard}>{t("contactUs")}</Nav.Link>
 
             <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
 

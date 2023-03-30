@@ -116,5 +116,13 @@
   "Branches": "Branches",
   "Vehicles": "Vehicles",
   "Cutsomers": "Customers",
-  "Career": "Career"
+  "Career": "Career",
+
+  "contactUs": "Contact Us",
+  "name": "Name",
+  "phonenumber": "Phone Number",
+  "emailAddress": "Email Address",
+  "message": "Message",
+  "sendBtn": "Send",
+  "contactUsAlert": "Thank you! We'll get back to you soon."
 }
