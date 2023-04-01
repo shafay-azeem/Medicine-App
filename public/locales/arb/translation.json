@@ -131,5 +131,9 @@
   "message": "رسالة",
   "sendBtn": "يرسل",
   "contactUsAlert": "شكرًا لك! سنعود إليك قريبًا",
-  "ourProducts": "منتجاتنا"
+  "ourProducts": "منتجاتنا",
+
+  "branchExtra": "عدن",
+  "tellNo": "قل لا",
+  "place": "عدن ، اليمن"
 }

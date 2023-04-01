@@ -129,5 +129,9 @@
   "message": "Message",
   "sendBtn": "Send",
   "contactUsAlert": "Thank you! We'll get back to you soon.",
-  "ourProducts": "Our Products"
+  "ourProducts": "Our Products",
+
+  "branchExtra": "Aden",
+  "tellNo": "Tell no",
+  "place": "Aden, Yemen"
 }

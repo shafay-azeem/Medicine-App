@@ -135,7 +135,7 @@ const StaticCards = () => {
                             <img src={img.adress} />
                           </div>
                           <div class="">
-                            <p class="ms-2">Aden, Yemen</p>
+                            <p class="ms-2">{t("place")}</p>
                           </div>
                         </div>
                       </div>
@@ -165,39 +165,61 @@ const StaticCards = () => {
               </div>
 
               {/* ---------------------- */}
-              <div className="Branches row py-3 text-center">
-                <div className="col-md-4">
-                  <h4 className="section-title">Sana</h4>
-                  <p>+967 779999881</p>
-                  <p>+967 779999887</p>
+              <div className="Branches row py-3 text-center" >
+                <div className="col-md-4" >
+                  <h4 className="section-title">{t("branch2")}</h4>
+                  <div dir="ltr">
+                    <p>+967 779999881</p>
+                    <p>+967 779999887</p>
+                  </div>
+
                 </div>
 
                 <div className="col-md-4">
-                  <h4 className="section-title">Aden Mukala</h4>
-                  <p>+967 779999882</p>
-                  <p>+967 779999883</p>
+                  <h4 className="section-title">{t("branch7")}</h4>
+
+                  <div dir="ltr">
+                    <p>+967 779999882</p>
+                    <p>+967 779999883</p>
+                  </div>
+
                 </div>
 
                 <div className="col-md-4">
-                  <h4 className="section-title">Aden</h4>
-                  <p>+967 779999884</p>
+                  <h4 className="section-title">{t("branchExtra")}</h4>
+                  <div dir="ltr">
+                    <p>+967 779999884</p>
+                  </div>
+
                 </div>
               </div>
 
               <div className="Branches row py-3 text-center">
                 <div className="col-md-4">
-                  <h4 className="section-title">Ibb</h4>
-                  <p>+967 779999885</p>
+                  <h4 className="section-title">{t("branch5")}</h4>
+                  <div dir="ltr">
+                    <p>+967 779999885</p>
+                  </div>
+
+
                 </div>
 
                 <div className="col-md-4">
-                  <h4 className="section-title">Aldhale</h4>
-                  <p>+967 779999886</p>
+                  <h4 className="section-title">{t("branch6")}</h4>
+                  <div dir="ltr">
+                    <p>+967 779999886</p>
+                  </div>
+
+
                 </div>
 
                 <div className="col-md-4">
-                  <h4 className="section-title">Tell No</h4>
-                  <p>+967 02325595</p>
+                  <h4 className="section-title">{t("tellNo")}</h4>
+
+                  <div dir="ltr">
+                    <p>+967 02325595</p>
+                  </div>
+
                 </div>
               </div>
             </div>
