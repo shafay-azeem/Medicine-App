@@ -126,7 +126,7 @@ export const ViewProducts = () => {
                       <span class="head">{t("Cutsomers")}</span>
                       <div class="number">
                         +
-                        <CountUp end={500} duration={5} />
+                        <CountUp end={1861} duration={5} />
                       </div>
                       {/* <p>{t("Cutsomers")}</p> */}
                     </div>

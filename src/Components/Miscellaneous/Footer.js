@@ -40,42 +40,6 @@ export default function Footer() {
           <hr style={{ color: "#b2b7c1" }}></hr>
         </div>
 
-        <div className="container py-3">
-          <div className="row">
-
-            <div className="col-md-1">
-              <h6 className="widget_title">Tell No : </h6>
-              <p className="branchTitle">+96702325595</p>
-            </div>
-
-
-            <div className="col-lg-10">
-              <h6 className="widget_title ms-3">CONTACT</h6>
-              <div className="d-lg-flex align-items-center justify-content-around">
-                <p className="branchTitle text-center ms-2">+967 779999881 ( sanaa )</p>
-                <div className="vl"></div>
-                <p className="branchTitle text-center">+967 779999882 (aden , mukala )</p>
-                <div className="vl"></div>
-                <p className="branchTitle text-center">+967 779999883 ( aden , mukala )</p>
-                <div className="vl"></div>
-                <p className="branchTitle text-center">+967 779999884 (aden )</p>
-                <div className="vl"></div>
-                <p className="branchTitle text-center">+967 779999885 ( ibb )</p>
-                <div className="vl"></div>
-                <p className="branchTitle text-center">+967 779999886  ( aldhale )</p>
-                <div className="vl"></div>
-                <p className="branchTitle text-center text-center">+967 779999887  ( sanaa )</p>
-              </div>
-
-            </div>
-            <div className="col-md-1">
-              <h6 className="widget_title"> Phone :</h6>
-              <p className="branchTitle">+967 774577776</p>
-            </div>
-          </div>
-          <hr style={{ color: "#b2b7c1", marginTop: '30px' }}></hr>
-        </div>
-
         <div class="container">
           <div class="row">
             <div class="col-sm-3">
