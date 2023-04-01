@@ -128,7 +128,7 @@ const StaticCards = () => {
 
                 <div class="col-lg-12 mt-3" dir="ltr">
                   <div class="card mt-4 border-0 mb-4">
-                    <div class="row">
+                    <div class="row Branches">
                       <div class="col-lg-4 col-md-4">
                         <div class="card-body d-flex align-items-center c-detail pl-0">
                           <div class="mr-3 align-self-center">
@@ -163,11 +163,49 @@ const StaticCards = () => {
                   </div>
                 </div>
               </div>
+
+              {/* ---------------------- */}
+              <div className="Branches row py-3">
+                <div className="col-md-4">
+                  <h4 className="section-title">Sana</h4>
+                  <p>+967 779999881</p>
+                  <p>+967 779999887</p>
+                </div>
+
+                <div className="col-md-4">
+                  <h4 className="section-title">Aden Mukala</h4>
+                  <p>+967 779999882</p>
+                  <p>+967 779999883</p>
+                </div>
+
+                <div className="col-md-4">
+                  <h4 className="section-title">Aden</h4>
+                  <p>+967 779999884</p>
+                </div>
+              </div>
+
+              <div className="Branches row py-3">
+                <div className="col-md-4">
+                  <h4 className="section-title">Ibb</h4>
+                  <p>+967 779999885</p>
+                </div>
+
+                <div className="col-md-4">
+                  <h4 className="section-title">Aldhale</h4>
+                  <p>+967 779999886</p>
+                </div>
+
+                <div className="col-md-4">
+                  <h4 className="section-title">Tell No</h4>
+                  <p>+967 02325595</p>
+                </div>
+              </div>
+
             </div>
+
           </div>
         </div>
       </div>
-
       <Footer></Footer>
     </>
   );
