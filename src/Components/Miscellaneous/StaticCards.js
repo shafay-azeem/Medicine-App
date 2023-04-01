@@ -165,7 +165,7 @@ const StaticCards = () => {
               </div>
 
               {/* ---------------------- */}
-              <div className="Branches row py-3">
+              <div className="Branches row py-3 text-center">
                 <div className="col-md-4">
                   <h4 className="section-title">Sana</h4>
                   <p>+967 779999881</p>
@@ -184,7 +184,7 @@ const StaticCards = () => {
                 </div>
               </div>
 
-              <div className="Branches row py-3">
+              <div className="Branches row py-3 text-center">
                 <div className="col-md-4">
                   <h4 className="section-title">Ibb</h4>
                   <p>+967 779999885</p>
@@ -200,9 +200,7 @@ const StaticCards = () => {
                   <p>+967 02325595</p>
                 </div>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
