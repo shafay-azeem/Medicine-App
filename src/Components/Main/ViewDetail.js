@@ -88,17 +88,19 @@ const ViewDetail = () => {
                   <div className="images p-3">
                     <div className="text-center p-4">
                       {product?.productVideo ? (
-                        <video width="250" height="250" controls>
+                        <video width="100%" height="100%" controls>
                           <source
                             src={product?.productVideo}
                             type="video/mp4"
+                            className="img-fluid"
                           ></source>
                         </video>
                       ) : (
                         <img
                           id="main-image"
                           src={product?.productImg}
-                          width="250"
+                          // width="250"
+                          className="img-fluid"
                         />
                       )}
                     </div>

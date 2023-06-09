@@ -41,6 +41,7 @@
 .page-header .p-tagline {
   color: var(--color-primary);
 }
+
 .page-header .p-title {
   font-size: 35px;
   font-weight: 700;
@@ -51,24 +52,29 @@
   color: #fff;
   border-radius: 15px;
 }
+
 .counters .number {
   font-size: 40px;
   font-weight: 800;
   line-height: 1;
 }
+
 .counters p {
   margin: 20px 0;
   font-size: 15px;
   letter-spacing: 0.2px;
 }
+
 .counters .number {
   font-size: 40px;
   font-weight: 800;
   line-height: 1;
 }
+
 .scounter {
   margin-top: -120px;
 }
+
 .bg-primary {
   background-color: var(--color-primary) !important;
 }
@@ -78,10 +84,40 @@
     margin: 0;
     margin-top: 2px;
   }
+
   .counters {
     border-radius: 0;
   }
+
   .imgStyle {
     margin-bottom: 10px;
   }
+}
+
+/* --------------------- */
+.contact3 {
+  color: #8d97ad;
+  font-weight: 300;
+}
+
+.contact3 h1,
+.contact3 h2,
+.contact3 h3,
+.contact3 h4,
+.contact3 h5,
+.contact3 h6 {
+  color: #001332;
+}
+
+.contact3 .font-weight-medium {
+  font-weight: 500;
+}
+
+.contact3 .card-shadow {
+  -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+  box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+}
+
+button {
+  background-color: #064580;
 }
