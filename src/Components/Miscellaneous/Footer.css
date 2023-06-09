@@ -85,3 +85,27 @@ footer .widget_title:hover {
 .branchTitle:hover {
   color: white;
 }
+
+@media (min-width: 1008px) {
+  .branchTitle {
+    color: #b2b7c1;
+    /* border-right: 1px solid #a6a6a6; */
+    padding-right: 10px;
+    font-size: 15px;
+  }
+  .branchTitle:last-child {
+    border: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .branchTitle {
+    color: #b2b7c1;
+    /* border-right: 1px solid #a6a6a6; */
+    padding-right: 10px;
+    font-size: 12px;
+  }
+  .branchTitle:last-child {
+    border: 0;
+  }
+}

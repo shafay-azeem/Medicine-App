@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "../Miscellaneous/StaticCards.css";
 import CountUp from "react-countup";
+import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const StaticCards = () => {
   const { t } = useTranslation();
@@ -105,7 +107,6 @@ const StaticCards = () => {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

@@ -25,20 +25,17 @@ export const AboutUs = () => {
     <>
       <Header Allow={Allow}></Header>
 
-      <div className="container py-5 align-items-center" style={{
-        marginTop: '50px'
-      }}>
-        <div className="row no-gutter flex-column" >
+      <div
+        className="container py-5 align-items-center"
+        style={{
+          marginTop: "50px",
+        }}
+      >
+        <div className="row no-gutter flex-column">
           <div>
             <img src={img.aboutBanner} class="img-fluid" />
           </div>
         </div>
-
-        {/* <div className="row py-4 d-flex align-items-center justify-content-center">
-          <div className="myImage">
-            <img className="img-fluid" src={AboutBanner} alt="cover" />
-          </div>
-        </div> */}
 
         <div className="row">
           <div className="col-lg-12 mt-3">
@@ -75,20 +72,18 @@ export const AboutUs = () => {
 
           <div className="col-lg-6">
             <div className="inner p-3">
-              <small className="text-blue">{t("our")}</small>
+              {/* <small className="text-blue">{t("our")}</small> */}
               <h4 className="subTitleStyle">{t("visionHeading")}</h4>
               <p>{t("visionDescription")}</p>
             </div>
 
             <div className="inner p-3 ">
-              <small className="text-blue">{t("our")}</small>
+              {/* <small className="text-blue">{t("our")}</small> */}
               <h4 className="subTitleStyle">{t("missionHeading")}</h4>
               <p>{t("missionDescription")}</p>
             </div>
 
             <div className="inner p-3">
-              {/* <h3>{t("valueHeading")}</h3> */}
-
               <div className="row text-center">
                 <div className="col-md-3 col-sm-6">
                   <img
@@ -147,59 +142,6 @@ export const AboutUs = () => {
           <div className="col-lg-6 text-end">
             <img className="img-fluid" src={img.missionVision} />
           </div>
-
-          {/* <div className="Sub-Div col-lg-3 my-5">
-            <div className="inner p-3 ">
-              <h3 className="text-center">{t("visionHeading")}</h3>
-              <p className="text-center">{t("visionDescription")}</p>
-            </div>
-          </div> */}
-
-          {/* 2 */}
-          {/* <div className="col-lg-3 my-5  d-flex align-items-center justify-content-center">
-            <div className="inner p-3 ">
-              <h3 className="text-center">{t("missionHeading")}</h3>
-              <p className="text-center">{t("missionDescription")}</p>
-            </div>
-          </div> */}
-
-          {/* 3 */}
-          {/* <div className="col-lg-3 my-5 ">
-            <div className="inner p-3 ">
-              <h3 className="text-center">{t("valueHeading")}</h3>
-              <p className="text-center">
-                {t("visionList1")}
-                <br />
-                {t("visionList2")}
-                <br />
-                {t("visionList3")}
-                <br />
-                {t("visionList4")}
-                <br />
-              </p>
-            </div>
-          </div> */}
-
-          {/* 4 */}
-          {/* <div className="col-lg-3   my-5 d-flex align-items-center justify-content-center">
-            <div className="inner p-3 ">
-              <h3 className="text-center">{t("legalityHeading")}</h3>
-              <p className="text-center">
-                {t("legalityPoint1")}
-                <br />
-                {t("legalityPoint2")}
-                <br />
-                {t("legalityPoint3")}
-                <br />
-                {t("legalityPoint4")}
-                <br />
-                {t("legalityPoint5")}
-                <br />
-                {t("legalityPoint6")}
-                <br />
-              </p>
-            </div>
-          </div> */}
         </div>
       </div>
       <Footer></Footer>

@@ -30,6 +30,8 @@ const Header = (props) => {
       helper = "YE";
       localStorage.setItem("helper", helper);
     } else {
+      // i18next.changeLanguage("en");
+      // helper = "GB";
       localStorage.getItem("helper");
       setSelected(localStorage.getItem("helper"));
     }
@@ -74,7 +76,7 @@ const Header = (props) => {
 
   const staticCard = () => {
     navigate({
-      pathname: "/career",
+      pathname: "/contactus",
     });
   };
 
@@ -93,12 +95,13 @@ const Header = (props) => {
     <Navbar expand="lg" fixed="top" className="navbar" id="grad1">
       <Container>
         <Navbar.Brand>
-          {selected === "GB" ? (
+          {selected === "YE" ? (
             <div className="d-flex">
               <img
                 className="preview me-2 mx-auto align-middle img-fluid"
-                src={img.logo}
+                src={img.logoYemen}
                 alt=""
+                onClick={Home}
                 style={{ maxWidth: "250px" }}
               />
               {/* <span className="align-middle" onClick={logout}>
@@ -109,8 +112,9 @@ const Header = (props) => {
             <div className="d-flex">
               <img
                 className="preview me-2 mx-auto align-middle img-fluid"
-                src={img.logoYemen}
+                src={img.logo}
                 alt=""
+                onClick={Home}
                 style={{ maxWidth: "250px" }}
               />
               {/* <span className="align-middle" onClick={logout}>
@@ -125,22 +129,22 @@ const Header = (props) => {
           <Nav className="ms-auto">
             <Nav.Link onClick={Home}>{t("home")} </Nav.Link>
 
-            <Nav.Link onClick={staticCard}>{t("Career")}</Nav.Link>
-
-            <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
-
-            <Nav.Link onClick={ourService}>{t("ourServices")}</Nav.Link>
-
             {token ? (
               <Nav.Link onClick={AddProduct}>{t("addProduct")}</Nav.Link>
             ) : null}
+
+            <Nav.Link onClick={About}>{t("aboutus")}</Nav.Link>
+
+            <Nav.Link onClick={ourService}>{t("services")}</Nav.Link>
+
+            <Nav.Link onClick={staticCard}>{t("contactUs")}</Nav.Link>
 
             {/* {Allow ? <Nav.Link >Update Product</Nav.Link> : null} */}
 
             <div className="d-flex align-items-center me-2">
               {/* <LanguageOption onChange={(e) => handleClick(e)}></LanguageOption> */}
               <ReactFlagsSelect
-                selected={selected}
+                selected={selected ? selected : "GB"}
                 onSelect={setSelected}
                 placeholder="Select Language"
                 countries={["GB", "YE"]}

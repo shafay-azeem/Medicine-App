@@ -28,6 +28,7 @@
   "updateProductHeading": "UPDATE PRODUCT",
   "createProductHeading": "CREATE PRODUCT",
   "ourServices": "Our Services",
+  "services": "Services",
   "companyDescription": "Muneer Ali Company participates in the import of medicines, medical supplies and cosmetics in all sales, as well as tenders for import, registration, marketing, promotion and distribution.",
   "importing": "Importing",
   "importingDescription": "We are well acquainted with the characteristics of the market and introduce new varieties of products, as we are also importing medicines needed by the market from Europe, India and the Middle East.",
@@ -52,6 +53,8 @@
   "branch4": "Taiz",
   "branch5": "Ibb",
   "branch6": "Aldhale",
+  "branch7": "Al Mukalla",
+  "branch8": "Shabwah",
   "Companieswedealwith": "Companies we deal with",
   "kenya": "KENYA",
   "Kenya1": "IVEE INFUSIONS EPZ LTD",
@@ -112,9 +115,23 @@
 
   "StaticNumber": "Number Of",
 
-  "importedProducts": "Imported Products",
+  "importedProducts": "Products",
   "Branches": "Branches",
   "Vehicles": "Vehicles",
   "Cutsomers": "Customers",
-  "Career": "Career"
+  "Career": "Career",
+
+  "contactUs": "Contact us",
+  "contactUsHeading": "Contact Us",
+  "name": "Name",
+  "phonenumber": "Phone Number",
+  "emailAddress": "Email Address",
+  "message": "Message",
+  "sendBtn": "Send",
+  "contactUsAlert": "Thank you! We'll get back to you soon.",
+  "ourProducts": "Our Products",
+
+  "branchExtra": "Aden",
+  "tellNo": "Tell no",
+  "place": "Al-Mansora , Aden , Yemen"
 }

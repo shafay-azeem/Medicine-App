@@ -31,7 +31,9 @@ export default function Footer() {
                 <p className="branchTitle">{t("branch3")}</p>&nbsp;&nbsp;
                 <p className="branchTitle">{t("branch4")}</p>&nbsp;&nbsp;
                 <p className="branchTitle">{t("branch5")}</p>&nbsp;&nbsp;
-                <p className="branchTitle">{t("branch6")}</p>
+                <p className="branchTitle">{t("branch6")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch7")}</p>&nbsp;&nbsp;
+                <p className="branchTitle">{t("branch8")}</p>
               </div>
             </div>
           </div>
@@ -70,7 +72,6 @@ export default function Footer() {
                 <div class="widget_content">
                   <ul>
                     <li>{t("Egypt1")}</li>
-
                     <li>{t("Egypt2")}</li>
                     <li>{t("Egypt3")}</li>
                     <li>{t("Egypt4")}</li>

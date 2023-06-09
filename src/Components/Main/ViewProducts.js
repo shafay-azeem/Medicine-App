@@ -7,10 +7,12 @@ import {
 import Header from "../Miscellaneous/Header";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import "./ViewProducts.css";
+import "../Miscellaneous/StaticCards.css";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import Footer from "../Miscellaneous/Footer";
 import apiFunctions from "../../global/GlobalFunction";
+import CountUp from "react-countup";
 import { API_URL, BASE_URL } from "../../global/Constant";
 import CountUp from "react-countup";
 
@@ -175,6 +177,7 @@ export const ViewProducts = () => {
 
 
         <Container style={{ marginTop: "1rem", marginBottom: "5rem" }}>
+          <h2 class="section-title mb-10 text-center">{t("ourProducts")}</h2>
           <Row>
             {medicineList?.map((x, index) => {
               return (
